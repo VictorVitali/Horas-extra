@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="/styles/indexStyle.css">
     <script src="main.js"></script>
 </head>
+
 <body>
     <div class="login-container">
         <div class="login-card">
@@ -14,13 +16,13 @@
                 <h1>Bem-vindo</h1>
                 <p>Faça login em sua conta</p>
             </div>
-            
+
             <form id="loginForm">
                 <div class="input-group">
                     <label for="email">E-mail</label>
                     <input type="text" id="email" placeholder="seu@email.com" required>
                 </div>
-                
+
                 <div class="input-group">
                     <label for="password">Senha</label>
                     <input type="password" id="password" placeholder="Sua senha" required>
@@ -28,7 +30,7 @@
 
                 <button type="submit" onclick="doLogin()" class="login-button">Entrar</button>
             </form>
-            
+
             <div class="signup">
                 <a href="#">Se cadastrar</a>
             </div>
@@ -36,13 +38,13 @@
     </div>
 
     <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-            
-            if(email && password) {
+            // verifcacao so para testes
+            if (email && password) {
                 alert('Login realizado com sucesso!');
                 window.location.href = "./Pages/sistema.html";
             } else {
@@ -51,4 +53,5 @@
         });
     </script>
 </body>
+
 </html>

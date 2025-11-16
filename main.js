@@ -37,7 +37,7 @@ function doLogin() {
 
     //OBS que descobri só hoje: o fetch nao funciona se não tiver um servidor (o chrome bloqueia de ler o arquivo)...
     //entao tem que usar a extensão Live Server xD
-    fetch('./usuarios.txt') 
+    fetch('./usuarios.txt')
         .then(response => response.text()) //response é oq veio do fetch, aqui ele vai transformar em um texto oq veio do fetch
         .then(texto => {
             // Limpa os arrays, mas deixei esse padrao pra caso voce nao tiver o Live Server
@@ -49,7 +49,7 @@ function doLogin() {
 
             linhas.forEach(linha => {
                 linha = linha.trim();
-                
+
                 if (linha && linha.includes(':')) {
                     const partes = linha.split(':');
                     const usuario = partes[0].trim();
@@ -58,13 +58,13 @@ function doLogin() {
                     if (usuario && senha) {
                         usuarios.push(usuario);
                         senhas.push(senha);
-                        
+
                         console.log('Usuário carregado:', usuario);
                         console.log('Senha carregada:', senha);
                     }
                 }
             });
-            
+
             console.log('Todos os usuários carregados:', usuarios);
             return true;
         })
