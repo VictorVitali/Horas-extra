@@ -1,3 +1,8 @@
+usuarios = ['teste'];
+senhas = ['123'];
+tipos = ['tec'];
+
+
 function SelectFiltroDMA(Selected) {
     //VAI PEGAR TODOS OS DO FILTRO E PARA CADA UM REMOVER A CLASSE 'ACTIVE'
     document.querySelectorAll("#filtroDMA .active").forEach(el => el.classList.remove("active"));
@@ -8,7 +13,6 @@ function SelectFiltroDMA(Selected) {
 
 }
 function CriarNotificacao(tipo = "Erro", mensagem = "Função não implementada ainda (Fui jogar lol)") {
-
     //REMOVE OS TIPOS ANTERIORES(DAVA PRA RETIRAR NO CloseAlert(), MAS ASSIM FICA MAIS FACIL DE EXPLICAR) E ADICIONA O CERTO
     document.getElementById("Alert").classList.remove("Erro");
     document.getElementById("Alert").classList.remove("Sucesso");
@@ -25,7 +29,7 @@ function CriarNotificacao(tipo = "Erro", mensagem = "Função não implementada 
 function CloseAlert() {
     document.getElementById("Alert").style.display = ("none");
 }
-function doLogin() {
+function carregaUsuarios() {
     // Essa é a funcao mais dificil do site, entao vou explicar quase linha por linha
     //Isso le o arquivo, mas como nao quero usar funcao assincrona, vou usar o Then
     //oq o Then faz, ele só faz aquilo que ta nele, DEPOIS de ter feito oq esta antes, sem isso, ele ia "Vou ler o arquivo" e ja ia pra proxima parte
@@ -41,8 +45,6 @@ function doLogin() {
         .then(response => response.text()) //response é oq veio do fetch, aqui ele vai transformar em um texto oq veio do fetch
         .then(texto => {
             // Limpa os arrays, mas deixei esse padrao pra caso voce nao tiver o Live Server
-            usuarios = ['Teste'];
-            senhas = ['123'];
 
             // Divide por linhas
             const linhas = texto.split('\n');
@@ -50,21 +52,22 @@ function doLogin() {
             linhas.forEach(linha => {
                 linha = linha.trim();
 
-                if (linha && linha.includes(':')) {
-                    const partes = linha.split(':');
-                    const usuario = partes[0].trim();
-                    const senha = partes[1].trim();
+                const partes = linha.split(':');
+                const usuario = partes[0].trim();
+                const senha = partes[1].trim();
+                const tipo = partes[2].trim();
 
-                    if (usuario && senha) {
-                        usuarios.push(usuario);
-                        senhas.push(senha);
+                if (!usuarios.indexOf(usuario)) { //Se não existir no array ainda ele vai colocar
+                    usuarios.push(usuario);
+                    senhas.push(senha);
+                    tipos.push(tipo);
 
-                        console.log('Usuário carregado:', usuario);
-                        console.log('Senha carregada:', senha);
-                    }
+                    console.log('Usuário carregado:', usuario);
+                    console.log('Senha carregada:', senha);
+                    console.log('tipo carregada:', tipo);
+
                 }
             });
-
             console.log('Todos os usuários carregados:', usuarios);
             return true;
         })
@@ -72,4 +75,19 @@ function doLogin() {
             console.error('Erro ao carregar arquivo:', error);
             return false;
         });
+}
+
+
+function switchLoginRegistro() {
+    var divs = document.getElementsByClassName("login-card");
+    
+    for (var i = 0; i < divs.length; i++) { //Faz a funcao igual um forEach, mas aqui usa for, entao vai percorrer X vezes sendo X a quantidade de elementos com esse classe.
+        var div = divs[i];
+        var displayAtual = div.style.display;     //Pega como está o display desse element
+        if (displayAtual == 'none') {             //Se tiver none, vai mostrar
+            div.style.display = ("block");
+        } else {                                  //Se nao, vai esconder
+            div.style.display = ("none");
+        }
+    };
 }

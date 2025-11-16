@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Sistema</title>
+    <link rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" href="/styles/indexStyle.css">
     <script src="main.js"></script>
 </head>
@@ -16,7 +17,9 @@
                 <h1>Bem-vindo</h1>
                 <p>Faça login em sua conta</p>
             </div>
-
+            login e senha ja criado: <br>
+            teste <br>
+            123
             <form id="loginForm">
                 <div class="input-group">
                     <label for="email">E-mail</label>
@@ -28,14 +31,53 @@
                     <input type="password" id="password" placeholder="Sua senha" required>
                 </div>
 
-                <button type="submit" onclick="doLogin()" class="login-button">Entrar</button>
+                <button type="submit" onclick="carregaUsuarios()" class="login-button">Entrar</button>
             </form>
 
-            <div class="signup">
+            <div class="signup" onclick="switchLoginRegistro()">
                 <a href="#">Se cadastrar</a>
             </div>
         </div>
+
+        <!-- comeca 'none' pq comeca no login, depois vou esconder o login e mostrar esse daqui -->
+        <div class="login-card" style="display: none;">
+            <div class="logo">
+                <h1>Registrar-se</h1>
+                <p>Coloque seus dados para se registrar</p>
+            </div>
+
+            <form id="RegistroForm">
+                <div class="input-group">
+                    <label for="emailR">E-mail</label>
+                    <input type="text" id="emailR" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="passwordR">Senha</label>
+                    <input type="password" id="passwordR" placeholder="Sua senha" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="TipoR">Tipo de Conta</label>
+                    <select id="TipoR" required>
+                        <option value="ger">Gerente</option>
+                        <option value="enc">Encarregado</option>
+                        <option value="tec">Técnico</option>
+                    </select>
+                </div>
+
+                <button type="submit" onclick="doRegistro()" class="registro-button">Registrar-se</button>
+            </form>
+
+            <div class="signup" onclick="switchLoginRegistro()">
+                <a href="#">Fazer Login</a>
+            </div>
+        </div>
     </div>
+    <div id="Alert">
+        <div id="ConteudoAlert"></div>
+    </div>
+
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function (e) {
@@ -43,12 +85,16 @@
 
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-            // verifcacao so para testes
-            if (email && password) {
-                alert('Login realizado com sucesso!');
+            if (usuarios.includes(email)) { //verifica se existe esse login
+                posicao = usuarios.indexOf(email);
+            } else {
+                CriarNotificacao('Erro', 'Email não encontrado');
+            }
+            if (password == senhas[posicao]) {
+                CriarNotificacao('Sucesso','Login realizado com sucesso!');
                 window.location.href = "./Pages/sistema.html";
             } else {
-                alert('Por favor, preencha todos os campos!');
+                CriarNotificacao('Erro', 'Senha invalida!');
             }
         });
     </script>
