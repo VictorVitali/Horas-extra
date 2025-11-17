@@ -81,7 +81,7 @@
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function (e) {
-            e.preventDefault();
+            e.preventDefault(); //Isso é só para ele ignorar oq um botão faz por padrão e só fazer oq ta aqui embaixo
 
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
@@ -92,7 +92,7 @@
             }
             if (password == senhas[posicao]) {
                 CriarNotificacao('Sucesso','Login realizado com sucesso!');
-                window.location.href = "./Pages/sistema.html";
+                window.location.href = "./Pages/sistema.html"; //Muda para o outro html
             } else {
                 CriarNotificacao('Erro', 'Senha invalida!');
             }

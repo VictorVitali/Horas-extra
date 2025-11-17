@@ -12,11 +12,11 @@
     <!-- MENU LATERAL -->
     <div class="sidebar">
         <img src="../styles/imgs/Logo.svg" class="logo">
-        <div class="menu-item" onclick="CriarNotificacao()">
+        <div class="menu-item" onclick="changeAba('banco')">
             <img class="iconMenu" src="../styles/imgs/Clock.svg">
             <span>Banco de horas</span>
         </div>
-        <div class="menu-item" onclick="CriarNotificacao()">
+        <div class="menu-item" onclick="changeAba('historico')">
             <img class="iconMenu" src="../styles/imgs/Folder.svg">
             <span>Histórico</span>
         </div>
@@ -54,14 +54,28 @@
     </div>
     <!-- FIM DA BARRA LATERAL -->
 
-    <div class="content">
+    <!-- ABA DE BANCO DE DADOS -->
+    <div class="banco-container main-container">
         <div class="page-title">
             <h2>Consulta de horas</h2>
+            <div class="Notificacao" onclick="openNotification()">
+                <img src="../styles/imgs/Notification.svg">
+            </div>
         </div>
 
         <div class="controls">
+            
+            <!-- <div class="nav-tabs">
+                <button onclick="CriarNotificacao()" class="active">Horas Extras</button>
+                <button onclick="CriarNotificacao()">Banco de horas</button>
+                <button onclick="CriarNotificacao()">Histórico</button>
+            </div> -->
+        </div>
+        
+        <div class="card-container">
             <div class="period-selector">
                 <label for="SelectMeses">Selecione o período:</label>
+                <br>
                 <select id="SelectMeses">
                     <option value="1">Janeiro/2025</option>
                     <option value="2">Fevereiro/2025</option>
@@ -77,15 +91,6 @@
                     <option value="12">Dezembro/2025</option>
                 </select>
             </div>
-
-            <div class="nav-tabs">
-                <button onclick="CriarNotificacao()" class="active">Horas Extras</button>
-                <button onclick="CriarNotificacao()">Banco de horas</button>
-                <button onclick="CriarNotificacao()">Histórico</button>
-            </div>
-        </div>
-
-        <div class="card-container">
             <div class="card">
                 <h3>Banco de Horas</h3>
                 <p>Horas acumuladas</p>
@@ -104,9 +109,11 @@
             </div> -->
             <div class="calendar-box">
                 <div class="calendar-header">
-                    <div><button onclick="CriarNotificacao()">&larr;</button> August 2020 <button onclick="CriarNotificacao()">&rarr;</button></div>
+                    <div><button onclick="CriarNotificacao()">&larr;</button> August 2020 <button
+                            onclick="CriarNotificacao()">&rarr;</button></div>
                     <div id="filtroDMA">
-                        <button onclick="SelectFiltroDMA('Month'), CriarNotificacao()" class="Month active">Month</button>
+                        <button onclick="SelectFiltroDMA('Month'), CriarNotificacao()"
+                            class="Month active">Month</button>
                         <button onclick="SelectFiltroDMA('Week'), CriarNotificacao()" class="Week">Week</button>
                         <button onclick="SelectFiltroDMA('Day'), CriarNotificacao()" class="Day">Day</button>
                         <button onclick="SelectFiltroDMA('List'), CriarNotificacao()" class="List">List</button>
@@ -166,6 +173,95 @@
                 </div>
 
             </div>
+        </div>
+    </div>
+    <!-- ABA DE HISTORICO -->
+    <div class="historico-container main-container" style="display: none;">
+        <div class="historico-header page-title">
+            <h2>Histórico</h2>
+            <!-- <div class="filtro-section">
+                <span>Filtrar</span>
+                <input type="text" placeholder="Pesquisar...">
+            </div> -->
+        </div>
+
+        <div class="historico-table-container">
+            <table class="historico-table">
+                <thead>
+                    <tr>
+                        <th>DATA</th>
+                        <th>DIA DA SEMANA</th>
+                        <th>ENTRADA</th>
+                        <th>SAÍDA</th>
+                        <th>OBSERVAÇÃO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>06/10/2025</td>
+                        <td>Quarta-feira</td>
+                        <td>08:42</td>
+                        <td>16:02</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>05/10/2025</td>
+                        <td>Terça-feira</td>
+                        <td>10:22</td>
+                        <td>20:00</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>04/10/2025</td>
+                        <td>Segunda-feira</td>
+                        <td>07:04</td>
+                        <td>14:00</td>
+                        <td>0h40min Horas extras</td>
+                    </tr>
+                    <tr>
+                        <td>03/10/2025</td>
+                        <td>Domingo</td>
+                        <td>FOLGA</td>
+                        <td>FOLGA</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>02/10/2025</td>
+                        <td>Sábado</td>
+                        <td>FOLGA</td>
+                        <td>FOLGA</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>01/10/2025</td>
+                        <td>Sexta-feira</td>
+                        <td>08:58</td>
+                        <td>15:52</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>31/09/2025</td>
+                        <td>Quinta-feira</td>
+                        <td>08:11</td>
+                        <td>16:07</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>30/09/2025</td>
+                        <td>Quarta-feira</td>
+                        <td>08:35</td>
+                        <td>17:00</td>
+                        <td>1h20min Horas extras</td>
+                    </tr>
+                    <tr>
+                        <td>29/09/2025</td>
+                        <td>Terça-feira</td>
+                        <td>08:52</td>
+                        <td>16:32</td>
+                        <td>1h20min Horas extras</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <!--Botoes para testar notificacoes-->

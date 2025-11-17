@@ -32,7 +32,7 @@ function CloseAlert() {
 function carregaUsuarios() {
     // Essa é a funcao mais dificil do site, entao vou explicar quase linha por linha
     //Isso le o arquivo, mas como nao quero usar funcao assincrona, vou usar o Then
-    //oq o Then faz, ele só faz aquilo que ta nele, DEPOIS de ter feito oq esta antes, sem isso, ele ia "Vou ler o arquivo" e ja ia pra proxima parte
+    //oq o Then faz: Ele só faz aquilo que ta nele, DEPOIS de ter feito oq esta antes, sem isso, ele ia "Vou ler o arquivo" e ja ia pra proxima parte
     //Oq ocasionaria de ele tentar executar a proxima parte do codigo sem nem ter retornado com oq foi lá ler no arquivo.
 
     //Basicamente:
@@ -44,7 +44,6 @@ function carregaUsuarios() {
     fetch('./usuarios.txt')
         .then(response => response.text()) //response é oq veio do fetch, aqui ele vai transformar em um texto oq veio do fetch
         .then(texto => {
-            // Limpa os arrays, mas deixei esse padrao pra caso voce nao tiver o Live Server
 
             // Divide por linhas
             const linhas = texto.split('\n');
@@ -58,21 +57,16 @@ function carregaUsuarios() {
                 const tipo = partes[2].trim();
 
                 if (!usuarios.indexOf(usuario)) { //Se não existir no array ainda ele vai colocar
+                    //O push ele insere na ultima posicao do array
                     usuarios.push(usuario);
                     senhas.push(senha);
                     tipos.push(tipo);
-
-                    console.log('Usuário carregado:', usuario);
-                    console.log('Senha carregada:', senha);
-                    console.log('tipo carregada:', tipo);
-
                 }
             });
-            console.log('Todos os usuários carregados:', usuarios);
             return true;
         })
-        .catch(error => {
-            console.error('Erro ao carregar arquivo:', error);
+        .catch(error => { //Isso eu vou tirar no final é apenas para me ajudar, menos uma coisa para eu ter q explicar
+            console.log("Deu ruim, vai olhar o console");
             return false;
         });
 }
@@ -90,4 +84,20 @@ function switchLoginRegistro() {
             div.style.display = ("none");
         }
     };
+}
+
+function changeAba(click){
+    abas = ['banco', 'historico'];
+    abas.forEach(aba => {
+        var div = document.querySelector("."+aba+"-container");
+        if (click == aba) {
+            div.style.display = ("block");
+        } else {
+            div.style.display = ("none");
+        }
+    });
+}
+
+function openNotification(){
+    document.getElementsByID("divNotificacao").style.display = ("block");
 }
