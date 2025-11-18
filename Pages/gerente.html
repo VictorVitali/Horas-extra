@@ -20,11 +20,11 @@
             <img class="iconMenu" src="../styles/imgs/Folder.svg" alt="Pasta">
             <span>Histórico</span>
         </div>
-        <div class="menu-item" onclick="changeAba('relatorio')">
+        <div class="menu-item" onclick="CriarNotificacao()">
             <img class="iconMenu" src="../styles/imgs/Documents.svg" alt="Folhas">
             <span>Relatório</span>
         </div>
-        <div class="menu-item" onclick="changeAba('solicitar')">
+        <div class="menu-item" onclick="CriarNotificacao()">
             <img class="iconMenu" src="../styles/imgs/Add.svg" alt="Sinal de adicao">
             <span>Solicitar</span>
         </div>
@@ -293,14 +293,13 @@
                 </tbody>
             </table>
         </div>
-   </div>
 
-    <!--ABA SOLICITAR-->
-    <div class="solicitar-container main-container" style="display: none;">
-        <div class="solicitar-header page-title">
-            <h2>Solicitar</h2>
-        </div>
+        <!--Botoes para testar notificacoes-->
+        <h2> V Botoes para testar notificacoes V</h2>
+        <button onclick="CriarNotificacao('Sucesso', 'Sucesso. Essa é uma notificação positiva')">Sucesso</button>
+        <button onclick="CriarNotificacao('Erro', 'Erro. Essa é uma notificação negativa')">Error</button>
     </div>
+
     <div id="Alert">
         <div id="ConteudoAlert"></div>
     </div>

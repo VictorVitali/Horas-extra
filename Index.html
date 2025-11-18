@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Sistema</title>
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/indexStyle.css">
     <script src="main.js"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/indexStyle.css">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
                     <input type="password" id="password" placeholder="Sua senha" required>
                 </div>
 
-                <button type="submit" onclick="carregaUsuarios()" class="login-button">Entrar</button>
+                <button type="submit" class="login-button">Entrar</button>
             </form>
 
             <div class="signup" onclick="switchLoginRegistro()">
@@ -58,15 +58,15 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="TipoR">Tipo de Conta</label>
-                    <select id="TipoR" required>
+                    <label for="tipoR">Tipo de Conta</label>
+                    <select id="tipoR" required>
                         <option value="ger">Gerente</option>
                         <option value="enc">Encarregado</option>
                         <option value="tec">Técnico</option>
                     </select>
                 </div>
 
-                <button type="submit" onclick="doRegistro()" class="registro-button">Registrar-se</button>
+                <button type="submit" onclick="criarCadastro()" class="registro-button">Registrar-se</button>
             </form>
 
             <div class="signup" onclick="switchLoginRegistro()">
@@ -91,8 +91,22 @@
                 CriarNotificacao('Erro', 'Email não encontrado');
             }
             if (password == senhas[posicao]) {
+                //Muda para a pagina do tipo dele.
                 CriarNotificacao('Sucesso', 'Login realizado com sucesso!');
-                window.location.href = "./Pages/sistema.html"; //Muda para o outro html
+                console.log(cargos[posicao]);
+                switch (cargos[posicao]) {
+                    case 'tec':
+                        window.location.href = "./Pages/tecnico.html";
+                        break;
+                    case 'ger':
+                        window.location.href = "./Pages/gerente.html";
+                        break;
+                    case 'enc':
+                        window.location.href = "./Pages/encarregado.html";
+                        break;
+                    default:
+                        window.location.href = "./Pages/sistema.html";
+                }
             } else {
                 CriarNotificacao('Erro', 'Senha invalida!');
             }
