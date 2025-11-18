@@ -17,6 +17,7 @@ h1 {
 
 h2 {
     size: 50px;
+    margin: 0;
 }
 
 h3 {
@@ -58,7 +59,7 @@ body {
     /*Fixed para ficar lockado na tela quando mexer para baixo*/
     position: fixed;
 
-    width: 240px;
+    width: 9rem;
     background: white;
     height: 100vh;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
@@ -93,14 +94,15 @@ body {
 }
 
 .Usuario img {
-    width: 40px;
-    height: 40px;
+    width: 1.7rem;
+    height: 1.7rem;
     border-radius: 50%;
 }
 
 .dadosUser {
     margin-left: 10px;
     font-size: 14px;
+    overflow:hidden;
 }
 
 .user-email {
@@ -112,7 +114,7 @@ body {
 
 .main-container {
     /*Esse margin eh para o menu lateral, sem ele essa div vai ficar escondida atras dele */
-    margin-left: 280px;
+    margin-left: 11rem;
     flex: 1;
     padding: 30px;
     padding-top: 10px;
@@ -149,8 +151,10 @@ body {
 }
 
 .page-title {
-    margin-bottom: 10px;
-    font-size: 28px;
+    padding: 1rem;
+    padding-left: 0;
+    
+    font-size: 1.5rem;
     color: #2c3e50;
 }
 
@@ -280,7 +284,7 @@ body {
 }
 
 .iconMenu {
-    height: 35px;
+    height: 1.6rem;
 }
 
 #Alert {
@@ -315,7 +319,7 @@ body {
 }
 
 .Notificacao img {
-    height: 51px;
+    height: 2.2rem;
 }
 
 #ConteudoAlert {
@@ -522,10 +526,10 @@ select:focus {
 }
 
 .modal-help {
-    display: block;
+    display: flex;
     position: fixed;
-    bottom: 150px;
-    left: 100px;
+    bottom: 7rem;
+    left: 3rem;
     justify-content: center;
     align-items: center;
 }
@@ -534,7 +538,7 @@ select:focus {
 .modal-help-header {
     background-color: #003366;
     color: white;
-    padding: 0 2rem;
+    padding: 1.5rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -549,7 +553,7 @@ select:focus {
 }
 .modal-help-content {
     background-color: white;
-    width: 90%;
+    width: 80%;
     max-width: 500px;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -566,6 +570,7 @@ select:focus {
     border-radius: 10px;
     padding: 0.2rem 1rem;
     transition: background-color 0.2s ease;
+    cursor: pointer;
 }
 .help-section:hover{
     background-color: #ececec;
