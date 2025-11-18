@@ -11,39 +11,39 @@
 <body>
     <!-- MENU LATERAL -->
     <div class="sidebar">
-        <img src="../styles/imgs/Logo.svg" class="logo">
+        <img src="../styles/imgs/Logo.svg" class="logo" alt="Logo do site">
         <div class="menu-item" onclick="changeAba('banco')">
-            <img class="iconMenu" src="../styles/imgs/Clock.svg">
+            <img class="iconMenu" src="../styles/imgs/Clock.svg" alt="Relogio">
             <span>Banco de horas</span>
         </div>
         <div class="menu-item" onclick="changeAba('historico')">
-            <img class="iconMenu" src="../styles/imgs/Folder.svg">
+            <img class="iconMenu" src="../styles/imgs/Folder.svg" alt="Pasta">
             <span>Histórico</span>
         </div>
         <div class="menu-item" onclick="CriarNotificacao()">
-            <img class="iconMenu" src="../styles/imgs/Documents.svg">
+            <img class="iconMenu" src="../styles/imgs/Documents.svg" alt="Folhas">
             <span>Relatório</span>
         </div>
         <div class="menu-item" onclick="CriarNotificacao()">
-            <img class="iconMenu" src="../styles/imgs/Add.svg">
+            <img class="iconMenu" src="../styles/imgs/Add.svg" alt="Sinal de adicao">
             <span>Solicitar</span>
         </div>
         <div class="menu-item">
-            <img class="iconMenu" src="../styles/imgs/Important File.svg">
+            <img class="iconMenu" src="../styles/imgs/Important File.svg" alt="Folha importante">
             <span>Pedidos</span>
         </div>
         <!--MENU DE PERFIL-->
         <div class="menu-footer">
-            <div class="menu-item" onclick="CriarNotificacao()">
-                <img class="iconMenu" src="../styles/imgs/Help.svg">
+            <div class="menu-item" onclick="openModal('Help')">
+                <img class="iconMenu" src="../styles/imgs/Help.svg" alt="Ajuda">
                 <span>Ajuda</span>
             </div>
             <div class="menu-item" onclick="CriarNotificacao()">
-                <img class="iconMenu" src="../styles/imgs/Engrenagem.svg">
+                <img class="iconMenu" src="../styles/imgs/Engrenagem.svg" alt="Engrenagem">
                 <span>Ajustes</span>
             </div>
             <div class="Usuario">
-                <img class="iconMenu" src="../styles/imgs/Avatar.png">
+                <img class="iconMenu" src="../styles/imgs/Avatar.png" alt="Imagem de perfil">
                 <div class="dadosUser">
                     Vitali
                     <br>
@@ -51,27 +51,57 @@
                 </div>
             </div>
         </div>
+        <!--JANELA AJUDA-->
+        <div class="modal-help" id="divHelp">
+            <div class="modal-help-content">
+                <div class="modal-help-header">
+                    <h2>Central de Ajuda</h2>
+                    <button class="close-button" id="closeHelp" onclick="fecharModal('help')">&times;</button>
+                </div>
+                <div class="modal-help-body">
+                    <div class="help-section">
+                        <h3>Perguntas Frequentes</h3>
+                        <p>Encontre respostas para as perguntas mais frequentes sobre o banco de horas.</p>
+                    </div>
+
+                    <div class="help-section">
+                        <h3>Política da Empresa</h3>
+                        <p>Consulte as políticas internas da empresa.</p>
+                    </div>
+
+                    <div class="help-section">
+                        <h3>Dúvidas sobre Banco de Horas</h3>
+                        <p>Tire suas dúvidas sobre como funciona o banco de horas.</p>
+                    </div>
+
+                    <div class="help-section">
+                        <h3>Contatos</h3>
+                        <p>Entre em contato com nossa equipe de suporte para obter ajuda personalizada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- FIM DA BARRA LATERAL -->
 
-    <!-- ABA DE BANCO DE DADOS -->
+    <!-- ABA DE BANCO DE HORAS -->
     <div class="banco-container main-container">
         <div class="page-title">
             <h2>Consulta de horas</h2>
-            <div class="Notificacao" onclick="openNotification()">
-                <img src="../styles/imgs/Notification.svg">
+            <div class="Notificacao" onclick="openModal('Notificacao')">
+                <img src="../styles/imgs/Notification.svg" alt="Notificacao">
             </div>
         </div>
 
         <div class="controls">
-            
+
             <!-- <div class="nav-tabs">
                 <button onclick="CriarNotificacao()" class="active">Horas Extras</button>
                 <button onclick="CriarNotificacao()">Banco de horas</button>
                 <button onclick="CriarNotificacao()">Histórico</button>
             </div> -->
         </div>
-        
+
         <div class="card-container">
             <div class="period-selector">
                 <label for="SelectMeses">Selecione o período:</label>
@@ -272,6 +302,56 @@
 
     <div id="Alert">
         <div id="ConteudoAlert"></div>
+    </div>
+    <!-- MODAL DE NOTIFICACAO -->
+    <div class="modal-notificacao" id="divNotificacao">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-close" onclick="fecharModal('notificacao')">x</div>
+                <h1>Notificações</h1>
+            </div>
+
+            <div class="modal-content">
+
+
+                <div class="notification-item aprovado">
+                    <div class="notification-icon">
+                        <img src="../styles/imgs/check.svg" alt="Correto">
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-title">Aprovação Hora Extra</div>
+                        <div class="notification-desc">Sua solicitação de horas extras do dia 15/03 foi aprovada pelo
+                            gestor.</div>
+                        <div class="notification-time">12:10</div>
+                    </div>
+                </div>
+
+                <div class="notification-item aprovado">
+                    <div class="notification-icon">
+                        <img src="../styles/imgs/check.svg" alt="Correto">
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-title">Aprovação Hora Extra</div>
+                        <div class="notification-desc">Suas horas extras do turno da noite foram validadas pelo RH.
+                        </div>
+                        <div class="notification-time">12:10</div>
+                    </div>
+                </div>
+
+                <div class="notification-item rejeitado">
+                    <div class="notification-icon">
+                        <img src="../styles/imgs/X.svg" alt="Correto">
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-title">Desaprovação Hora Extra</div>
+                        <div class="notification-desc">Sua solicitação de horas extras do final de semana não foi
+                            aprovada.</div>
+                        <div class="notification-time">12:12</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 </body>
 

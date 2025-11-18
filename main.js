@@ -98,6 +98,12 @@ function changeAba(click){
     });
 }
 
-function openNotification(){
-    document.getElementsByID("divNotificacao").style.display = ("block");
+function openModal(modal){
+    document.getElementById("div"+modal).style.display = ("flex");
+}
+
+function fecharModal(modal) {
+    document.querySelectorAll('.modal-'+modal).forEach(modal => {
+        modal.style.display = 'none';
+    });
 }

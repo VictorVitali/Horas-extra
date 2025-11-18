@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <!-- LOGIN -->
     <div class="login-container">
         <div class="login-card">
             <div class="logo">
@@ -38,8 +39,7 @@
                 <a href="#">Se cadastrar</a>
             </div>
         </div>
-
-        <!-- comeca 'none' pq comeca no login, depois vou esconder o login e mostrar esse daqui -->
+        <!-- CADASTRO -->
         <div class="login-card" style="display: none;">
             <div class="logo">
                 <h1>Registrar-se</h1>
@@ -91,7 +91,7 @@
                 CriarNotificacao('Erro', 'Email não encontrado');
             }
             if (password == senhas[posicao]) {
-                CriarNotificacao('Sucesso','Login realizado com sucesso!');
+                CriarNotificacao('Sucesso', 'Login realizado com sucesso!');
                 window.location.href = "./Pages/sistema.html"; //Muda para o outro html
             } else {
                 CriarNotificacao('Erro', 'Senha invalida!');
