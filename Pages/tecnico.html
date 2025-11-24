@@ -20,7 +20,6 @@
             <img class="iconMenu" src="../styles/imgs/Folder.svg" alt="Pasta">
             <span>Histórico</span>
         </div>
-
         <!--MENU DE PERFIL-->
         <div class="menu-footer">
             <div class="menu-item" onclick="openModal('Help')">
@@ -194,8 +193,16 @@
             </div>
         </div>
     </div>
+    <!-- FIM ABA DE BANCO DE HORAS -->
+
     <!-- ABA DE HISTORICO -->
     <div class="historico-container main-container" style="display: none;">
+        <div class="page-title">
+            <h2>Consulta de horas</h2>
+            <div class="Notificacao" onclick="openModal('Notificacao')">
+                <img src="../styles/imgs/Notification.svg" alt="Notificacao">
+            </div>
+        </div>
         <div class="historico-header page-title">
             <h2>Histórico</h2>
             <!-- <div class="filtro-section">
@@ -208,92 +215,160 @@
             <table class="historico-table">
                 <thead>
                     <tr>
-                        <th>DATA</th>
-                        <th>DIA DA SEMANA</th>
-                        <th>ENTRADA</th>
-                        <th>SAÍDA</th>
-                        <th>OBSERVAÇÃO</th>
+                        <th>Código Solicitação</th>
+                        <th>Encarregado</th>
+                        <th>Obra</th>
+                        <th>Data Requisição</th>
+                        <th>Quant. Horas</th>
+                        <th>Status</th>
+                        <th>Detalhes</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>06/10/2025</td>
-                        <td>Quarta-feira</td>
-                        <td>08:42</td>
-                        <td>16:02</td>
-                        <td></td>
+                        <td>2025821</td>
+                        <td>Arthur G. Siqueira</td>
+                        <td>Malville</td>
+                        <td>10/10/2025</td>
+                        <td>30hrs</td>
+                        <td><span class="status-pendente">Pendente</span></td>
+                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
-                        <td>05/10/2025</td>
-                        <td>Terça-feira</td>
-                        <td>10:22</td>
-                        <td>20:00</td>
-                        <td></td>
+                        <td>2025820</td>
+                        <td>Richard V. Costa</td>
+                        <td>Leito Verde</td>
+                        <td>10/10/2025</td>
+                        <td>15hrs</td>
+                        <td><span class="status-pendente">Pendente</span></td>
+                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
-                        <td>04/10/2025</td>
-                        <td>Segunda-feira</td>
-                        <td>07:04</td>
-                        <td>14:00</td>
-                        <td>0h40min Horas extras</td>
+                        <td>2025819</td>
+                        <td>Fernada T. Vanile</td>
+                        <td>Malville</td>
+                        <td>10/10/2025</td>
+                        <td>15hrs</td>
+                        <td><span class="status-pendente">Pendente</span></td>
+                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
-                        <td>03/10/2025</td>
-                        <td>Domingo</td>
-                        <td>FOLGA</td>
-                        <td>FOLGA</td>
-                        <td></td>
+                        <td>2025818</td>
+                        <td>Richard V. Costa</td>
+                        <td>Malville</td>
+                        <td>10/10/2025</td>
+                        <td>10hrs</td>
+                        <td><span class="status-pendente">Pendente</span></td>
+                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
-                        <td>02/10/2025</td>
-                        <td>Sábado</td>
-                        <td>FOLGA</td>
-                        <td>FOLGA</td>
-                        <td></td>
+                        <td>2025817</td>
+                        <td>Jorge A. de Jesus</td>
+                        <td>Jaques</td>
+                        <td>10/10/2025</td>
+                        <td>12hrs</td>
+                        <td><span class="status-pendente">Pendente</span></td>
+                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
-                        <td>01/10/2025</td>
-                        <td>Sexta-feira</td>
-                        <td>08:58</td>
-                        <td>15:52</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>31/09/2025</td>
-                        <td>Quinta-feira</td>
-                        <td>08:11</td>
-                        <td>16:07</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>30/09/2025</td>
-                        <td>Quarta-feira</td>
-                        <td>08:35</td>
-                        <td>17:00</td>
-                        <td>1h20min Horas extras</td>
-                    </tr>
-                    <tr>
-                        <td>29/09/2025</td>
-                        <td>Terça-feira</td>
-                        <td>08:52</td>
-                        <td>16:32</td>
-                        <td>1h20min Horas extras</td>
+                        <td>2025816</td>
+                        <td>Eduarda B. Silva</td>
+                        <td>Malville</td>
+                        <td>10/10/2025</td>
+                        <td>10hrs</td>
+                        <td><span class="status-pendente">Pendente</span></td>
+                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-
-        <!--Botoes para testar notificacoes-->
-        <h2> V Botoes para testar notificacoes V</h2>
-        <button onclick="CriarNotificacao('Sucesso', 'Sucesso. Essa é uma notificação positiva')">Sucesso</button>
-        <button onclick="CriarNotificacao('Erro', 'Erro. Essa é uma notificação negativa')">Error</button>
     </div>
+    <!-- FIM ABA DE HISTORICO -->
 
-    <div id="Alert">
-        <div id="ConteudoAlert"></div>
+    <!--ABA SOLICITAR-->
+    <div class="solicitar-container main-container" style="display: none;">
+        <div class="page-title">
+            <h2>Consulta de horas</h2>
+            <div class="Notificacao" onclick="openModal('Notificacao')">
+                <img src="../styles/imgs/Notification.svg" alt="Notificacao">
+            </div>
+        </div>
+        <div class="page-title">
+            <h2>Solicitar</h2>
+        </div>
+
+        <div class="form-container">
+            <table class="form-table">
+                <thead>
+                    <tr>
+                        <th>Obra</th>
+                        <th>Quantidade de Horas</th>
+                        <th>Data Início</th>
+                        <th>Data Término</th>
+                        <th>Técnicos Solicitantes</th>
+                        <th>Justificativa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <select id="obra" required>
+                                <option value="">Selecione a obra</option>
+                                <option value="obra1">Obra A - Residencial Alphaville</option>
+                                <option value="obra2">Obra B - Comercial Centro</option>
+                                <option value="obra3">Obra C - Industrial Zona Leste</option>
+                                <option value="outra">Outra</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="number" id="quantidade-horas" placeholder="Digite aqui" min="1" max="12"
+                                required>
+                        </td>
+                        <td>
+                            <input type="date" id="data-inicio" required>
+                        </td>
+                        <td>
+                            <input type="date" id="data-termino" required>
+                        </td>
+                        <td>
+                            <select id="tecnicos" multiple required>
+                                <option value="tec1">João Silva - Engenheiro Civil</option>
+                                <option value="tec2">Maria Santos - Técnica em Edificações</option>
+                                <option value="tec3">Pedro Oliveira - Engenheiro Eletricista</option>
+                                <option value="tec4">Ana Costa - Técnica em Segurança</option>
+                                <option value="tec5">Carlos Lima - Engenheiro Mecânico</option>
+                                <option value="tec6">Fernanda Rocha - Arquiteta</option>
+                            </select>
+                            <small>Limite de 5 técnicos</small>
+                        </td>
+                        <td>
+                            <textarea id="justificativa" placeholder="Digite aqui" required></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="form-footer">
+
+                <div class="submit-section">
+                    <button type="submit" class="submit-btn"
+                        onclick="CriarNotificacao('Sucesso', 'Sua solicitação foi enviada com sucesso')">Enviar
+                        Requisição</button>
+                </div>
+            </div>
+        </div>
+
     </div>
+    <!--FIM ABA SOLICITAR-->
+
     <!-- MODAL DE NOTIFICACAO -->
     <div class="modal-notificacao" id="divNotificacao">
+        <div class="page-title">
+            <h2>Consulta de horas</h2>
+            <div class="Notificacao" onclick="openModal('Notificacao')">
+                <img src="../styles/imgs/Notification.svg" alt="Notificacao">
+            </div>
+        </div>
         <div class="modal-container">
             <div class="modal-header">
                 <div class="modal-close" onclick="fecharModal('notificacao')">x</div>
@@ -342,6 +417,13 @@
             </div>
         </div>
     </div>
+    <!-- FIM MODAL DE NOTIFICACAO -->
+
+    <!-- ALERTA -->
+    <div id="Alert">
+        <div id="ConteudoAlert"></div>
+    </div>
+    <!-- FIM ALERTA -->
 </body>
 
 </html>

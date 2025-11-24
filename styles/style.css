@@ -588,3 +588,122 @@ select:focus {
     margin-bottom: 10px;
     color: #555;
 }
+
+
+
+
+
+
+
+/* Estilos Gerais */
+.solicitar-container {
+    max-width: 70vw; /*70% da largura da tela*/
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* Container do Formulário */
+.form-container {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+/* Tabela do Formulário */
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.form-table th {
+    background: #f8f9fa;
+    color: #2c3e50;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 30px;
+    border: 1px solid #dee2e6;
+}
+
+.form-table td {
+    padding: 8px;
+    border: 1px solid #dee2e6;
+}
+
+/* Campos do Formulário */
+.form-table select,
+.form-table input,
+.form-table textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da; /*Tirar a borda grossa*/
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.form-table select:focus,
+.form-table input:focus,
+.form-table textarea:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.form-table small {
+    display: block;
+    margin-top: 5px;
+    color: #6c757d;
+    font-size: 11px;
+}
+
+/* Textarea */
+.form-table textarea {
+    min-height: 7rem;
+}
+
+/* Rodapé do Formulário */
+.form-footer {
+    padding: 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Botão de Enviar */
+.submit-section {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.submit-btn {
+    background: #3498db;
+    color: white;
+    padding: 12px 40px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+.form-table th {
+    position: relative;
+}
+
+/*Tirar as setinhas do campo number que são feionas*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/* Estilo dos Placeholders */
+::placeholder {
+    color: #6c757d;
+    opacity: 0.7;
+    font-size: 13px;
+}
