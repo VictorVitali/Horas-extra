@@ -38,7 +38,6 @@ function criarCadastro(){
 
 function switchLoginRegistro() {
     var divs = document.getElementsByClassName("login-card");
-    console.log('pq ta entrando aqui???');
     for (var i = 0; i < divs.length; i++) {
         var div = divs[i];
         var displayAtual = div.style.display; 
