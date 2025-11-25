@@ -1,13 +1,12 @@
-usuarios = ['teste'];
-senhas = ['123'];
-cargos = ['tec'];
+emails = ['gerente','encarregado', 'tecnico'];
+senhas = ['123456', '654321', '162534'];
+cargos = ['ger','enc','tec'];
 
 
 function SelectFiltroDMA(Selected) {
     //VAI PEGAR TODOS OS DO FILTRO E PARA CADA UM REMOVER A CLASSE 'ACTIVE'
     document.querySelectorAll("#filtroDMA .active").forEach(el => el.classList.remove("active"));
     //VAI ADCIONAR ACTIVE NO SELECIONADO
-    console.log(Selected);
     document.querySelector("#filtroDMA ." + Selected).classList.add('active');
 
 }
@@ -22,20 +21,24 @@ function CriarNotificacao(tipo = "Erro", mensagem = "Função não implementada 
     var notificacao = "<span>" + mensagem + "</span> <div onclick='CloseAlert()' class='CloseAlert'> x </div>";
     document.getElementById("ConteudoAlert").innerHTML = notificacao;
 
-    // Depois de 3s (3000ms) vai executar a funcao de fechar o alerta
-    setTimeout(CloseAlert, 3000);
+    // Depois de 2s (2000ms) vai executar a funcao de fechar o alerta automaticamente
+    setTimeout(CloseAlert, 2000);
 }
 function CloseAlert() {
     document.getElementById("Alert").style.display = ("none");
 }
 function criarCadastro(){
-    var nome = document.getElementById('emailR').value;
+    var email = document.getElementById('emailR').value;
     var senha = document.getElementById('passwordR').value;
     var tipo = document.getElementById("tipoR").value;
 
-    usuarios.push(nome);
-    senhas.push(senha);
-    cargos.push(tipo);
+    if(emails.includes(email)){
+        CriarNotificacao("Error", "Email já registrado");
+    }else{
+        emails.push(email);
+        senhas.push(senha);
+        cargos.push(tipo);
+    }
 }
 
 function switchLoginRegistro() {
