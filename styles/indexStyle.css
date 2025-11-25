@@ -6,7 +6,6 @@
 }
 
 body {
-    /* gradiente faz nao ficar uma cor solida, deixa um efeitozinho de degrade na cor, sem isso fica mt feio */
     background: linear-gradient(135deg, #30a0c2 0%, #28295a 100%);
     height: 100vh;
     display: flex;
@@ -74,7 +73,6 @@ body {
 .registro-button {
     width: 90%;
     padding: 12px;
-    /* gradiente faz nao ficar uma cor solida, deixa um efeitozinho de degrade na cor, sem isso fica mt feio */
     background: linear-gradient(135deg, #3688d0 0%, #496781 100%);
     color: white;
     border: none;
@@ -82,13 +80,10 @@ body {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    /* Aqui é o tempo para fazer a animacao ao colocar o mouse em cima */
     transition: transform 0.2s;
 }
 
-/* Aqui é a animacao de ir para cima ao colocar o mouse em cima*/
 .login-button:hover {
-    /* ir para cima(Y) 2 pixels, - significa pra cima e sem nada é para baixo */
     transform: translateY(-2px);
 }
 
@@ -99,17 +94,14 @@ body {
 .signup a {
     color: #667eea;
     font-weight: 500;
-    /* tirar a linha embaixo do link */
     text-decoration: none;
 }
 
-/* colocar a linha embaixo do link quando o mouse tiver em cima*/
 .signup a:hover {
     text-decoration: underline;
 }
 
 @media (max-width: 480px) {
-    /* adaptar para mobile mais tarde, estou com preguica agora */
 }
 
 

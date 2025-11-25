@@ -78,34 +78,32 @@
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function (e) {
-            e.preventDefault(); //Isso é só para ele ignorar oq um botão faz por padrão e só fazer oq ta aqui embaixo
+            e.preventDefault();
 
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-            if (usuarios.includes(email)) { //verifica se existe esse login
+            if (usuarios.includes(email)) {
                 posicao = usuarios.indexOf(email);
-            } else {
-                CriarNotificacao('Erro', 'Email não encontrado');
-            }
-            if (password == senhas[posicao]) {
-                //Muda para a pagina do tipo dele.
-                CriarNotificacao('Sucesso', 'Login realizado com sucesso!');
-                console.log(cargos[posicao]);
-                switch (cargos[posicao]) {
-                    case 'tec':
-                        window.location.href = "./Pages/tecnico.html";
-                        break;
-                    case 'ger':
-                        window.location.href = "./Pages/gerente.html";
-                        break;
-                    case 'enc':
-                        window.location.href = "./Pages/encarregado.html";
-                        break;
-                    default:
-                        window.location.href = "./Pages/sistema.html";
+                if (password == senhas[posicao]) {
+                    CriarNotificacao('Sucesso', 'Login realizado com sucesso!');
+                    switch (cargos[posicao]) {
+                        case 'tec':
+                            window.location.href = "./Pages/tecnico.html";
+                            break;
+                        case 'ger':
+                            window.location.href = "./Pages/gerente.html";
+                            break;
+                        case 'enc':
+                            window.location.href = "./Pages/encarregado.html";
+                            break;
+                        default:
+                            window.location.href = "./Pages/sistema.html";
+                    }
+                } else {
+                    CriarNotificacao('Erro', 'Senha invalida!');
                 }
             } else {
-                CriarNotificacao('Erro', 'Senha invalida!');
+                CriarNotificacao('Erro', 'Email não encontrado');
             }
         });
     </script>
