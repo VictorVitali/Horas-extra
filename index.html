@@ -82,8 +82,8 @@
 
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-            if (usuarios.includes(email)) {
-                posicao = usuarios.indexOf(email);
+            if (emails.includes(email)) {
+                posicao = emails.indexOf(email);
                 if (password == senhas[posicao]) {
                     CriarNotificacao('Sucesso', 'Login realizado com sucesso!');
                     switch (cargos[posicao]) {
