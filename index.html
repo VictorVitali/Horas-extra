@@ -82,15 +82,14 @@
 
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-            if (usuarios.includes(email)) { //verifica se existe esse login
-                posicao = usuarios.indexOf(email);
+            if (emails.includes(email)) {
+                posicao = emails.indexOf(email);
             } else {
                 CriarNotificacao('Erro', 'Email não encontrado');
             }
             if (password == senhas[posicao]) {
                 //Muda para a pagina do tipo dele.
                 CriarNotificacao('Sucesso', 'Login realizado com sucesso!');
-                console.log(cargos[posicao]);
                 switch (cargos[posicao]) {
                     case 'tec':
                         window.location.href = "./Pages/tecnico.html";

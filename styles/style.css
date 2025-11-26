@@ -92,14 +92,18 @@ body {
 .Usuario {
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 20px 10px;
+    padding-right: 5px;
     background: #ececec;
 }
 
-.Usuario img {
+.Usuario .avatar {
     width: 1.7rem;
     height: 1.7rem;
     border-radius: 50%;
+}
+.logout{
+    padding: 5px;
 }
 
 .dadosUser {

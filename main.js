@@ -1,15 +1,9 @@
-emails = ['gerente','encarregado', 'tecnico'];
+emails = ['gerente', 'encarregado', 'tecnico'];
 senhas = ['123456', '654321', '162534'];
-cargos = ['ger','enc','tec'];
+cargos = ['ger', 'enc', 'tec'];
 
 
-function SelectFiltroDMA(Selected) {
-    //VAI PEGAR TODOS OS DO FILTRO E PARA CADA UM REMOVER A CLASSE 'ACTIVE'
-    document.querySelectorAll("#filtroDMA .active").forEach(el => el.classList.remove("active"));
-    //VAI ADCIONAR ACTIVE NO SELECIONADO
-    document.querySelector("#filtroDMA ." + Selected).classList.add('active');
 
-}
 function CriarNotificacao(tipo = "Erro", mensagem = "Função não implementada ainda (Fui jogar lol)") {
     //REMOVE OS TIPOS ANTERIORES(DAVA PRA RETIRAR NO CloseAlert(), MAS ASSIM FICA MAIS FACIL DE EXPLICAR) E ADICIONA O CERTO
     document.getElementById("Alert").classList.remove("Erro");
@@ -27,20 +21,28 @@ function CriarNotificacao(tipo = "Erro", mensagem = "Função não implementada 
 function CloseAlert() {
     document.getElementById("Alert").style.display = ("none");
 }
-function criarCadastro(){
+
+//TELA DE LOGIN / CADASTRO
+function criarCadastro() {
     var email = document.getElementById('emailR').value;
     var senha = document.getElementById('passwordR').value;
     var tipo = document.getElementById("tipoR").value;
 
-    if(emails.includes(email)){
+    if (emails.includes(email)) {
         CriarNotificacao("Error", "Email já registrado");
-    }else{
+    } else {
         emails.push(email);
         senhas.push(senha);
         cargos.push(tipo);
+
+        //LIMPAR OS CAMPOS, NAO É OBRIGATORIO, MAS FICA BOM
+        document.getElementById('emailR').value = '';
+        document.getElementById('passwordR').value = '';
+
+        //VOLTAR PARA A TELA DE LOGIN
+        switchLoginRegistro();
     }
 }
-
 function switchLoginRegistro() {
     var divs = document.getElementsByClassName("login-card");
     console.log('pq ta entrando aqui???');
@@ -55,24 +57,36 @@ function switchLoginRegistro() {
     };
 }
 
-function changeAba(click){
+//FUNCAO QUE TROCA DE ABA AO CLICAR NA BARRA LATERAL
+function changeAba(click) {
     abas = ['banco', 'historico', 'solicitar', 'pedidos', 'relatorio'];
+    //PARA CADA ABA ELE VAI ESCONDER OU MOSTRAR ELAS.
     abas.forEach(aba => {
-        var div = document.querySelector("."+aba+"-container");
+        var div = document.querySelector("." + aba + "-container");
         if (click == aba) {
-            div.style.display = ("block");
+            div.style.display = ("block"); //QUANDO FOR A ABA CLICADA, EM VEZ DE ESCONDER ELE VAI MOSTRAR
         } else {
-            div.style.display = ("none");
+            div.style.display = ("none"); //QUANDO FOR QUALQUER OUTRA ABA, ELE VAI ESCONDER
         }
     });
 }
 
-function openModal(modal){
-    document.getElementById("div"+modal).style.display = ("flex");
+function openModal(modal) {
+    document.getElementById("div" + modal).style.display = ("flex");
 }
-
 function fecharModal(modal) {
-    document.querySelectorAll('.modal-'+modal).forEach(modal => {
+    document.querySelectorAll('.modal-' + modal).forEach(modal => {
         modal.style.display = 'none';
     });
+}
+
+function SelectFiltroDMA(Selected) {
+    //VAI PEGAR TODOS OS DO FILTRO E PARA CADA UM REMOVER A CLASSE 'ACTIVE'
+    document.querySelectorAll("#filtroDMA .active").forEach(el => el.classList.remove("active"));
+    //VAI ADCIONAR ACTIVE NO SELECIONADO
+    document.querySelector("#filtroDMA ." + Selected).classList.add('active');
+}
+
+function logout(){
+    window.location.href = "../index.html";
 }
