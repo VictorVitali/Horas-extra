@@ -4,7 +4,7 @@ cargos = ['ger', 'enc', 'tec'];
 
 
 
-function CriarNotificacao(tipo = "Erro", mensagem = "Função não implementada ainda (Fui jogar lol)") {
+function CriarNotificacao(tipo = "Erro", mensagem = "Função não implementada ainda") {
     //REMOVE OS TIPOS ANTERIORES(DAVA PRA RETIRAR NO CloseAlert(), MAS ASSIM FICA MAIS FACIL DE EXPLICAR) E ADICIONA O CERTO
     document.getElementById("Alert").classList.remove("Erro");
     document.getElementById("Alert").classList.remove("Sucesso");
