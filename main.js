@@ -50,9 +50,10 @@ function switchLoginRegistro() {
 }
 
 function changeAba(click){
-    abas = ['banco', 'historico', 'solicitar', 'pedidos', 'relatorio'];
+    abas = ['banco', 'historico', 'solicitar', 'relatorio', 'pedidos'];
     abas.forEach(aba => {
         var div = document.querySelector("."+aba+"-container");
+        console.log(document.querySelector("."+aba+"-container"))
         if (click == aba) {
             div.style.display = ("block");
         } else {
