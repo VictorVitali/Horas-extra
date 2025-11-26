@@ -59,7 +59,7 @@ function switchLoginRegistro() {
 
 //FUNCAO QUE TROCA DE ABA AO CLICAR NA BARRA LATERAL
 function changeAba(click) {
-    abas = ['banco', 'historico', 'solicitar', 'pedidos', 'relatorio'];
+    abas = ['banco', 'historico', 'solicitar', 'relatorio', 'pedidos'];
     //PARA CADA ABA ELE VAI ESCONDER OU MOSTRAR ELAS.
     abas.forEach(aba => {
         var div = document.querySelector("." + aba + "-container");

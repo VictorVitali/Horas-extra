@@ -382,6 +382,143 @@
     </div>
     <!--FIM ABA SOLICITAR-->
 
+    <!--ABA DE RELATORIO -->
+
+    <div class="relatorio-container main-container" style="display: none;">
+        <div class="page-title">
+
+            <div class="Notificacao" onclick="openModal('Notificacao')">
+                <img src="../styles/imgs/Notification.svg" alt="Notificacao">
+            </div>
+        </div>
+        <div class="page-title">
+            <h2>Relatório</h2>
+        </div>
+
+        <div class="filters">
+
+
+            <div class="column">
+                <div class="input-group">
+                    <label>Período</label>
+                </div>
+                <div class="input-group">
+                    <label>De:</label>
+                    <input type="date" placeholder="  /  /  ">
+                </div>
+
+                <div class="input-group">
+                    <label>Até:</label>
+                    <input type="date" placeholder="  /  /  ">
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="input-group">
+                    <select>
+                        <option>Encarregado</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <select>
+                        <option>Quantidade de Horas</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="column">
+                <div class="input-group">
+                    <select>
+                        <option>Obra</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <select>
+                        <option>Status</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards-table-wrapper">
+
+            <div class="cards-relatorio">
+
+                <div class="card-relatorio">
+                    <span>Total Horas Extras:</span>
+                    <p>*** horas</p>
+                </div>
+
+                <div class="card-relatorio">
+                    <span>Valor Total Alocado:</span>
+                    <p>R$***,**</p>
+                </div>
+
+                <div class="card-relatorio">
+                    <span>Horas Extras no Período:</span>
+                    <p>*** horas</p>
+                </div>
+
+                <div class="card-relatorio">
+                    <span>Valor Alocado no Período:</span>
+                    <p>R$***,**</p>
+                </div>
+            </div>
+
+            <div class="table-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Técnico</th>
+                            <th>Função</th>
+                            <th>Obra</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**/**/****</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>**/**/****</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>**/**/****</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>**/**/****</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>**/**/****</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="submit-section" style="margin-top: 1rem;">
+            <button class="btn-relatorio submit-btn">Gerar Relatório PDF</button>
+        </div>
+    </div>
+    <!-- FIM ABA RELATORIO -->
+
     <!-- MODAL DE NOTIFICACAO -->
     <div class="modal-notificacao" id="divNotificacao">
         <div class="page-title">
