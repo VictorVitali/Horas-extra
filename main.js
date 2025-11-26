@@ -8,7 +8,7 @@ function SelectFiltroDMA(Selected) {
     document.querySelector("#filtroDMA ." + Selected).classList.add('active');
 
 }
-function CriarNotificacao(tipo = "Erro", mensagem = "Função não implementada ainda (Fui jogar lol)") {
+function CriarNotificacao(tipo = "Erro", mensagem = "Função não implementada ainda") {
     document.getElementById("Alert").classList.remove("Erro");
     document.getElementById("Alert").classList.remove("Sucesso");
     document.getElementById("Alert").classList.add(tipo);
