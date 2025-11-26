@@ -533,7 +533,7 @@ select:focus {
 }
 
 .notification-item img {
-    width: 1.5rem;
+    width: 1.5rem; 
 }
 
 .notification-title {
@@ -791,4 +791,100 @@ input[type="number"]::-webkit-inner-spin-button {
     padding: 10px;
     text-align: center;
     border-bottom: 1px solid #eaeaea;
+}
+
+
+/*MEXER AQ*/
+.modal-details-historico {
+  width: 850px;
+  max-width: 90%;
+  margin: 30px auto;
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.req-modal-body {
+  padding: 36px 42px;
+}
+
+/* header info */
+.req-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 12px 36px;
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+.req-info-grid .label {
+  font-weight: 600;
+}
+
+/* Description / técnicos / datas */
+.req-grid-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 150px;
+  gap: 28px;
+}
+
+.desc-box textarea {
+  width: 100%;
+  height: 110px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  resize: none;
+  padding: 8px;
+  background: #fdfdfd;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.tech-box .tech-list {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 10px 8px;
+  min-height: 110px;
+  font-size: 14px;
+  background: #fdfdfd;
+}
+
+/* status */
+.status-row {
+  margin-top: 32px;
+  font-size: 18px;
+}
+
+.status-label {
+  font-weight: 600;
+}
+
+.status-value {
+  color: #c7a100; /* dourado */
+  margin-left: 4px;
+}
+
+/* Ações */
+.req-actions {
+  display: flex;
+  gap: 28px;
+  justify-content: flex-start;
+  margin-top: 24px;
+}
+
+.req-actions button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  color: #0067ff;
+}
+
+.cancel-btn {
+  color: #d10e0e;
 }

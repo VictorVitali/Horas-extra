@@ -247,7 +247,7 @@
                         <td>10/10/2025</td>
                         <td>30hrs</td>
                         <td><span class="status-pendente">Pendente</span></td>
-                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
+                        <td><button class="detalhes-btn" onclick="openModal('Details-historico')"><img src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
                         <td>2025820</td>
@@ -296,6 +296,60 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div class="modal-details-historico modal-notificacao" id="divDetails-historico">
+            <div class="req-modal-body">
+
+                <div class="req-info-grid">
+                    <div class="item">
+                        <span class="label">Código:</span> 2025811
+                    </div>
+                    <div class="item">
+                        <span class="label">Encarregado:</span> Richard
+                    </div>
+                    <div class="item">
+                        <span class="label">Obra:</span> Malvile
+                    </div>
+                    <div class="item">
+                        <span class="label">Data da Requisição:</span> 10/10/2025
+                    </div>
+                    <div class="item">
+                        <span class="label">Quantidade de Horas:</span> 30hrs
+                    </div>
+                </div>
+
+                <div class="req-grid-content">
+                    <div class="desc-box">
+                        <span class="label">Descrição:</span>
+                        <textarea readonly>A obra está atrasada.</textarea>
+                    </div>
+
+                    <div class="tech-box">
+                        <span class="label">Técnicos:</span>
+                        <div class="tech-list">
+                            João <br>
+                            Enzo <br>
+                            Roberta
+                        </div>
+                    </div>
+
+                    <div class="date-box">
+                        <p><span class="label">Início:</span> 15/10/2025</p>
+                        <p><span class="label">Fim:</span> 25/10/2025</p>
+                    </div>
+                </div>
+
+                <div class="status-row">
+                    <span class="status-label">Status:</span>
+                    <span class="status-value">Em análise</span>
+                </div>
+
+                <div class="req-actions">
+                    <button class="edit-btn">Editar</button>
+                    <button class="cancel-btn">Cancelar envio</button>
+                </div>
+
+            </div>
         </div>
     </div>
     <!-- FIM ABA DE HISTORICO -->
@@ -370,7 +424,7 @@
                         onclick="CriarNotificacao('Sucesso', 'Sua solicitação foi enviada com sucesso')">Enviar
                         Requisição</button>
                 </div>
-                 <span>
+                <span>
                     *Todos os campos são obrigatórios
                 </span>
                 <span class="right">

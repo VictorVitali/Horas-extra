@@ -57,6 +57,7 @@ body {
 
 .input-group input {
     width: 100%;
+    max-width: 15rem;
     padding: 12px 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -107,6 +108,19 @@ body {
 .signup a:hover {
     text-decoration: underline;
 }
+
+.login {
+    width: 500px;
+    height: 400px;
+    background-color: #8A8A8A;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 
 @media (max-width: 480px) {
     /* adaptar para mobile mais tarde, estou com preguica agora */
