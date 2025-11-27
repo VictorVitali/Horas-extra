@@ -490,7 +490,7 @@ select:focus {
     max-height: calc(80vh - 140px);
     overflow-y: auto;
     position: relative;
-
+    min-width: 600px
 }
 
 .notification-item {
@@ -711,11 +711,6 @@ input[type="number"]::-webkit-inner-spin-button {
     float: right;
 }
 
-
-.relatorio-container {
-    max-width: 1200px;
-}
-
 .filters {
     display: flex;
     gap: 6rem;
@@ -795,32 +790,48 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
 /*MEXER AQ*/
-
-.req-modal-body {
-  padding: 36px 42px;
+.modal-container-hist {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  min-width: 70rem;
 }
 
+.hist-modal-body {
+  display: flex;
+  border-radius: 12px;
+  border: 1px solid black;
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+}
 /* header info */
-.req-info-grid {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
+.hist-info-grid {
+  display: flex;
+  flex-direction: column;
   gap: 12px 36px;
   font-size: 15px;
   margin-bottom: 28px;
 }
 
-.req-info-grid .label {
+.hist-info-grid .label {
   font-weight: 600;
 }
 
-/* Description / técnicos / datas */
-.req-grid-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr 150px;
-  gap: 28px;
+.hist-grid-content {
+  display: flex;
 }
-
-.desc-box textarea {
+.hist-dir-modal {
+  border-left: 2px solid black;
+  width: 30%;
+  padding: 2rem 1.5rem;
+}
+.hist-esq-modal {
+  width: 70%;
+  padding: 2rem 1.5rem;
+}
+.desc-box textarea, .tec-box textarea {
   width: 100%;
   height: 110px;
   border: 1px solid #aaa;
@@ -832,18 +843,17 @@ input[type="number"]::-webkit-inner-spin-button {
   font-family: inherit;
 }
 
-.tech-box .tech-list {
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  padding: 10px 8px;
-  min-height: 110px;
-  font-size: 14px;
-  background: #fdfdfd;
+
+.desc-box {
+  width: 60%;
+}
+.tec-box {
+  width: 40%;
 }
 
 /* status */
 .status-row {
-  margin-top: 32px;
+  padding: 32px 0;
   font-size: 18px;
 }
 
@@ -852,11 +862,11 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .status-value {
-  color: #c7a100; /* dourado */
+  color: #c7a100;
+  font-weight: 700;
   margin-left: 4px;
 }
 
-/* Ações */
 .req-actions {
   display: flex;
   gap: 28px;

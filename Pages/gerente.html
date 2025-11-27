@@ -12,6 +12,10 @@
     <!-- MENU LATERAL -->
     <div class="sidebar">
         <img src="../styles/imgs/Logo.svg" class="logo" alt="Logo do site">
+        <div class="menu-item" onclick="changeAba('solicitar')">
+            <img class="iconMenu" src="../styles/imgs/Add.svg" alt="Sinal de adicao">
+            <span>Solicitações</span>
+        </div>
         <div class="menu-item" onclick="changeAba('historico')">
             <img class="iconMenu" src="../styles/imgs/Folder.svg" alt="Pasta">
             <span>Histórico</span>
@@ -19,10 +23,6 @@
         <div class="menu-item" onclick="changeAba('relatorio')">
             <img class="iconMenu" src="../styles/imgs/Documents.svg" alt="Folhas">
             <span>Relatório</span>
-        </div>
-        <div class="menu-item">
-            <img class="iconMenu" src="../styles/imgs/Important File.svg" alt="Folha importante">
-            <span>Pedidos</span>
         </div>
         <!--MENU DE PERFIL-->
         <div class="menu-footer">
@@ -88,6 +88,14 @@
             </div>
         </div>
 
+        <div class="controls">
+
+            <!-- <div class="nav-tabs">
+                <button onclick="CriarNotificacao()" class="active">Horas Extras</button>
+                <button onclick="CriarNotificacao()">Banco de horas</button>
+                <button onclick="CriarNotificacao()">Histórico</button>
+            </div> -->
+        </div>
 
         <div class="card-container">
             <div class="period-selector">
@@ -231,7 +239,7 @@
                         <td>10/10/2025</td>
                         <td>30hrs</td>
                         <td><span class="status-pendente">Pendente</span></td>
-                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
+                        <td><button class="detalhes-btn" onclick="openModal('Details-historico')"><img src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
                         <td>2025820</td>
@@ -240,7 +248,7 @@
                         <td>10/10/2025</td>
                         <td>15hrs</td>
                         <td><span class="status-pendente">Pendente</span></td>
-                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
+                        <td><button class="detalhes-btn" onclick="openModal('Details-historico')"><img src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
                         <td>2025819</td>
@@ -249,7 +257,7 @@
                         <td>10/10/2025</td>
                         <td>15hrs</td>
                         <td><span class="status-pendente">Pendente</span></td>
-                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
+                        <td><button class="detalhes-btn" onclick="openModal('Details-historico')"><img src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
                         <td>2025818</td>
@@ -258,7 +266,7 @@
                         <td>10/10/2025</td>
                         <td>10hrs</td>
                         <td><span class="status-pendente">Pendente</span></td>
-                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
+                        <td><button class="detalhes-btn" onclick="openModal('Details-historico')"><img src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
                         <td>2025817</td>
@@ -267,7 +275,7 @@
                         <td>10/10/2025</td>
                         <td>12hrs</td>
                         <td><span class="status-pendente">Pendente</span></td>
-                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
+                        <td><button class="detalhes-btn" onclick="openModal('Details-historico')"><img src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
                         <td>2025816</td>
@@ -276,10 +284,71 @@
                         <td>10/10/2025</td>
                         <td>10hrs</td>
                         <td><span class="status-pendente">Pendente</span></td>
-                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
+                        <td><button class="detalhes-btn" onclick="openModal('Details-historico')"><img src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div class="modal-details-historico modal-notificacao" id="divDetails-historico">
+        <div class="modal-content">
+            <div class="modal-container modal-container-hist">
+                <div class="hist-modal-body">
+                    <div class="hist-esq-modal">
+                        <div class="hist-info-grid">
+                            <div class="row">
+                                <div class="item">
+                                    <span class="label">Código:</span> 2025811
+                                </div>
+                                <div class="item">
+                                    <span class="label">Encarregado:</span> Richard
+                                </div>
+                                <div class="item">
+                                    <span class="label">Obra:</span> Malvile
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="item">
+                                    <span class="label">Data da Requisição:</span> 10/10/2025
+                                </div>
+                                <div class="item">
+                                    <span class="label">Quantidade de Horas:</span> 30hrs
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hist-grid-content">
+                            <div class="desc-box">
+                                <span class="label">Descrição:</span>
+                                <textarea readonly>A obra está atrasada.</textarea>
+                            </div>
+
+                            <div class="tec-box">
+                                <span class="label">Técnicos:</span>
+                                <textarea readonly>
+João
+Enzo
+Roberta
+                                    </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hist-dir-modal">
+                        <div class="date-box">
+                            <p><span class="label">Início:</span> 15/10/2025</p>
+                            <p><span class="label">Fim:</span> 25/10/2025</p>
+                        </div>
+                        <div class="status-row">
+                            <span class="status-label">Status:</span>
+                            <span class="status-value">Em análise</span>
+                        </div>
+                        <div class="req-actions">
+                            <button class="edit-btn"><u>Editar</u></button>
+                            <button class="cancel-btn" onclick="fecharModal('details-historico')"><u>Cancelar envio</u></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- FIM ABA DE HISTORICO -->
@@ -357,15 +426,156 @@
                 <span>
                     *Todos os campos são obrigatórios
                 </span>
+                <span class="right">
+                    Solicitações para o dia seguinte somente até as 13:00
+                </span>
             </div>
         </div>
 
     </div>
     <!--FIM ABA SOLICITAR-->
 
+    <!--ABA DE RELATORIO -->
+
+    <div class="relatorio-container main-container" style="display: none;">
+        <div class="page-title">
+
+            <div class="Notificacao" onclick="openModal('Notificacao')">
+                <img src="../styles/imgs/Notification.svg" alt="Notificacao">
+            </div>
+        </div>
+        <div class="page-title">
+            <h2>Relatório</h2>
+        </div>
+
+        <div class="filters">
+
+
+            <div class="column">
+                <div class="input-group">
+                    <label>Período</label>
+                </div>
+                <div class="input-group">
+                    <label>De:</label>
+                    <input type="date" placeholder="  /  /  ">
+                </div>
+
+                <div class="input-group">
+                    <label>Até:</label>
+                    <input type="date" placeholder="  /  /  ">
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="input-group">
+                    <select>
+                        <option>Encarregado</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <select>
+                        <option>Quantidade de Horas</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="column">
+                <div class="input-group">
+                    <select>
+                        <option>Obra</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <select>
+                        <option>Status</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards-table-wrapper">
+
+            <div class="cards-relatorio">
+
+                <div class="card-relatorio">
+                    <span>Total Horas Extras:</span>
+                    <p>*** horas</p>
+                </div>
+
+                <div class="card-relatorio">
+                    <span>Valor Total Alocado:</span>
+                    <p>R$***,**</p>
+                </div>
+
+                <div class="card-relatorio">
+                    <span>Horas Extras no Período:</span>
+                    <p>*** horas</p>
+                </div>
+
+                <div class="card-relatorio">
+                    <span>Valor Alocado no Período:</span>
+                    <p>R$***,**</p>
+                </div>
+            </div>
+
+            <div class="table-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Técnico</th>
+                            <th>Função</th>
+                            <th>Obra</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**/**/****</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>**/**/****</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>**/**/****</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>**/**/****</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>**/**/****</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="submit-section" style="margin-top: 1rem;">
+            <button class="btn-relatorio submit-btn">Gerar Relatório PDF</button>
+        </div>
+    </div>
+    <!-- FIM ABA RELATORIO -->
+
     <!-- MODAL DE NOTIFICACAO -->
     <div class="modal-notificacao" id="divNotificacao">
         <div class="page-title">
+
             <div class="Notificacao" onclick="openModal('Notificacao')">
                 <img src="../styles/imgs/Notification.svg" alt="Notificacao">
             </div>
@@ -377,8 +587,6 @@
             </div>
 
             <div class="modal-content">
-
-
                 <div class="notification-item aprovado">
                     <div class="notification-icon">
                         <img src="../styles/imgs/check.svg" alt="Correto">
