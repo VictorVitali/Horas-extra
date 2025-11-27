@@ -124,6 +124,7 @@ body {
     border-radius: 50%;
 }
 .logout{
+    cursor: pointer;
     padding: 5px;
 }
 
@@ -447,7 +448,6 @@ select:focus {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     /* DEIXA O RESTO DO SITE UM POUCO MAIS ESCURO */
-    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -795,16 +795,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
 /*MEXER AQ*/
-.modal-details-historico {
-  width: 850px;
-  max-width: 90%;
-  margin: 30px auto;
-  border-radius: 24px;
-  background: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-  font-family: 'Poppins', sans-serif;
-}
 
 .req-modal-body {
   padding: 36px 42px;
