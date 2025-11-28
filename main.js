@@ -108,15 +108,21 @@ function carregarObras(id) {
 
     if (!carregado) {
         obras.push({id: id, descricao: "", tecnicos: ""});
+        document.getElementById("descTextarea").value = "";
+        document.getElementById("tecTextarea").value = "";
+        document.getElementById("obraIdHidden").value = id;
+    }else{
+        document.getElementById("descTextarea").value = carregado.descricao;
+        document.getElementById("tecTextarea").value = carregado.tecnicos;
+        document.getElementById("obraIdHidden").value = carregado.id;
     }
 
-    document.getElementById("descTextarea").value = carregado.descricao;
-    document.getElementById("tecTextarea").value = carregado.tecnicos;
-    document.getElementById("obraIdHidden").value = carregado.id;
 }
 
 
 function saveObra(){
+    var descricao = document.getElementById("descTextarea").value;
+    var tecnicos = document.getElementById("tecTextarea").value;
     var id = document.getElementById("obraIdHidden").value;
 
     var carregado = obras.find(obra => obra.id == id);
