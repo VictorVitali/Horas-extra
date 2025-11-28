@@ -2,6 +2,14 @@ emails = ['gerente', 'encarregado', 'tecnico'];
 senhas = ['123456', '654321', '162534'];
 cargos = ['ger', 'enc', 'tec'];
 
+let obras = [
+    {
+        id: 1,
+        descricao: "A obra está atrasada.",
+        tecnicos: "João"
+    }
+];
+
 
 
 function CriarNotificacao(tipo = "Erro", mensagem = "Função não implementada ainda") {
@@ -89,4 +97,32 @@ function SelectFiltroDMA(Selected) {
 
 function logout(){
     window.location.href = "../index.html";
+}
+
+function carregarObras(id) {
+    var carregado = obras.find(obra => obra.id == id);
+    console.log(carregado);
+
+    if (!carregado) {
+        obras.push({id: id, descricao: "", tecnicos: ""});
+    }
+
+    document.getElementById("descTextarea").value = carregado.descricao;
+    document.getElementById("tecTextarea").value = carregado.tecnicos;
+    document.getElementById("obraIdHidden").value = carregado.id;
+}
+
+function saveObra(){
+    var descricao = document.getElementById("descTextarea").value;
+    var tecnicos = document.getElementById("tecTextarea");
+    var id = document.getElementById("obraIdHidden").value;
+
+    var carregado = obras.find(obra => obra.id == id);
+
+    if (!carregado) {
+        return;
+    }
+
+    carregado.descricao = descricao;
+    carregado.tecnicos = tecnicos.value;
 }

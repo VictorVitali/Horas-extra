@@ -239,7 +239,7 @@
                         <td>10/10/2025</td>
                         <td>30hrs</td>
                         <td><span class="status-pendente">Pendente</span></td>
-                        <td><button class="detalhes-btn" onclick="openModal('Details-historico')"><img src="../styles/imgs/Menu Historico.svg"></button></td>
+                        <td><button class="detalhes-btn" onclick="openModal('Details-historico'); carregarObras('1')"><img src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
                         <td>2025820</td>
@@ -248,7 +248,7 @@
                         <td>10/10/2025</td>
                         <td>15hrs</td>
                         <td><span class="status-pendente">Pendente</span></td>
-                        <td><button class="detalhes-btn" onclick="openModal('Details-historico')"><img src="../styles/imgs/Menu Historico.svg"></button></td>
+                        <td><button class="detalhes-btn" onclick="openModal('Details-historico'); carregarObras('2')"><img src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
                         <td>2025819</td>
@@ -318,18 +318,15 @@
                         </div>
 
                         <div class="hist-grid-content">
+                            <input type="hidden" id="obraIdHidden">
                             <div class="desc-box">
                                 <span class="label">Descrição:</span>
-                                <textarea readonly>A obra está atrasada.</textarea>
+                                <textarea id="descTextarea"></textarea>
                             </div>
 
                             <div class="tec-box">
                                 <span class="label">Técnicos:</span>
-                                <textarea readonly>
-João
-Enzo
-Roberta
-                                    </textarea>
+                                <textarea id="tecTextarea"></textarea>
                             </div>
                         </div>
                     </div>
@@ -343,7 +340,7 @@ Roberta
                             <span class="status-value">Em análise</span>
                         </div>
                         <div class="req-actions">
-                            <button class="edit-btn"><u>Editar</u></button>
+                            <button class="edit-btn" onclick="saveObra()"><u>Editar</u></button>
                             <button class="cancel-btn" onclick="fecharModal('details-historico')"><u>Cancelar envio</u></button>
                         </div>
                     </div>
