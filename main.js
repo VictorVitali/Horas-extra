@@ -15,6 +15,7 @@ function CriarNotificacao(tipo = '', mensagem = '') {
     if(mensagem == '' || tipo == ''){
         return;
     }
+
     //REMOVE OS TIPOS ANTERIORES(DAVA PRA RETIRAR NO CloseAlert(), MAS ASSIM FICA MAIS FACIL DE EXPLICAR) E ADICIONA O CERTO
     document.getElementById("Alert").classList.remove("Erro");
     document.getElementById("Alert").classList.remove("Sucesso");
@@ -69,7 +70,7 @@ function switchLoginRegistro() {
 
 //FUNCAO QUE TROCA DE ABA AO CLICAR NA BARRA LATERAL
 function changeAba(click) {
-    abas = ['banco', 'historico', 'solicitar', 'relatorio'];
+    abas = ['banco', 'historico', 'solicitar', 'relatorio', 'solicitacoes'];
     //PARA CADA ABA ELE VAI ESCONDER OU MOSTRAR ELAS.
     abas.forEach(aba => {
         var div = document.querySelector("." + aba + "-container");
@@ -124,12 +125,15 @@ function carregarObras(id) {
 
 
 function saveObra(){
-    var descricao = document.getElementById("descTextarea").value;
-    var tecnicos = document.getElementById("tecTextarea").value;
     var id = document.getElementById("obraIdHidden").value;
 
     var carregado = obras.find(obra => obra.id == id);
 
     carregado.descricao = descricao;
     carregado.tecnicos = tecnicos;
+}
+
+function excluirObra() {
+    var id = document.getElementById("obraIdHidden").value;
+    obras = obras.filter(obra => obra.id != id);
 }
