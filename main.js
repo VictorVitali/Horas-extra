@@ -11,8 +11,10 @@ let obras = [
 ];
 
 
-
-function CriarNotificacao(tipo = "Erro", mensagem = "Função não implementada ainda") {
+function CriarNotificacao(tipo = '', mensagem = '') {
+    if(mensagem == '' || tipo == ''){
+        return;
+    }
     //REMOVE OS TIPOS ANTERIORES(DAVA PRA RETIRAR NO CloseAlert(), MAS ASSIM FICA MAIS FACIL DE EXPLICAR) E ADICIONA O CERTO
     document.getElementById("Alert").classList.remove("Erro");
     document.getElementById("Alert").classList.remove("Sucesso");
@@ -53,7 +55,7 @@ function criarCadastro() {
 }
 function switchLoginRegistro() {
     var divs = document.getElementsByClassName("login-card");
-    console.log('pq ta entrando aqui???');
+
     for (var i = 0; i < divs.length; i++) { //Faz a funcao igual um forEach, mas aqui usa for, entao vai percorrer X vezes sendo X a quantidade de elementos com esse classe.
         var div = divs[i];
         var displayAtual = div.style.display;     //Pega como está o display desse element
@@ -67,10 +69,15 @@ function switchLoginRegistro() {
 
 //FUNCAO QUE TROCA DE ABA AO CLICAR NA BARRA LATERAL
 function changeAba(click) {
-    abas = ['banco', 'historico', 'solicitar', 'relatorio', 'pedidos'];
+    abas = ['banco', 'historico', 'solicitar', 'relatorio'];
     //PARA CADA ABA ELE VAI ESCONDER OU MOSTRAR ELAS.
     abas.forEach(aba => {
         var div = document.querySelector("." + aba + "-container");
+
+        if (!div) {
+            return;
+        }
+
         if (click == aba) {
             div.style.display = ("block"); //QUANDO FOR A ABA CLICADA, EM VEZ DE ESCONDER ELE VAI MOSTRAR
         } else {
@@ -78,6 +85,7 @@ function changeAba(click) {
         }
     });
 }
+
 
 function openModal(modal) {
     document.getElementById("div" + modal).style.display = ("flex");
@@ -88,6 +96,7 @@ function fecharModal(modal) {
     });
 }
 
+
 function SelectFiltroDMA(Selected) {
     //VAI PEGAR TODOS OS DO FILTRO E PARA CADA UM REMOVER A CLASSE 'ACTIVE'
     document.querySelectorAll("#filtroDMA .active").forEach(el => el.classList.remove("active"));
@@ -95,13 +104,14 @@ function SelectFiltroDMA(Selected) {
     document.querySelector("#filtroDMA ." + Selected).classList.add('active');
 }
 
+
 function logout(){
     window.location.href = "../index.html";
 }
 
+
 function carregarObras(id) {
     var carregado = obras.find(obra => obra.id == id);
-    console.log(carregado);
 
     if (!carregado) {
         obras.push({id: id, descricao: "", tecnicos: ""});
@@ -112,17 +122,14 @@ function carregarObras(id) {
     document.getElementById("obraIdHidden").value = carregado.id;
 }
 
+
 function saveObra(){
     var descricao = document.getElementById("descTextarea").value;
-    var tecnicos = document.getElementById("tecTextarea");
+    var tecnicos = document.getElementById("tecTextarea").value;
     var id = document.getElementById("obraIdHidden").value;
 
     var carregado = obras.find(obra => obra.id == id);
 
-    if (!carregado) {
-        return;
-    }
-
     carregado.descricao = descricao;
-    carregado.tecnicos = tecnicos.value;
+    carregado.tecnicos = tecnicos;
 }
