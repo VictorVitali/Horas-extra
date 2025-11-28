@@ -16,17 +16,14 @@ function CriarNotificacao(tipo = '', mensagem = '') {
         return;
     }
 
-    //REMOVE OS TIPOS ANTERIORES(DAVA PRA RETIRAR NO CloseAlert(), MAS ASSIM FICA MAIS FACIL DE EXPLICAR) E ADICIONA O CERTO
     document.getElementById("Alert").classList.remove("Erro");
     document.getElementById("Alert").classList.remove("Sucesso");
     document.getElementById("Alert").classList.add(tipo);
     document.getElementById("Alert").style.display = ("flex");
 
-    //ESCREVE A MSG QUE RECEBEU
     var notificacao = "<span>" + mensagem + "</span> <div onclick='CloseAlert()' class='CloseAlert'> x </div>";
     document.getElementById("ConteudoAlert").innerHTML = notificacao;
 
-    // Depois de 2s (2000ms) vai executar a funcao de fechar o alerta automaticamente
     setTimeout(CloseAlert, 2000);
 }
 function CloseAlert() {
@@ -46,32 +43,29 @@ function criarCadastro() {
         senhas.push(senha);
         cargos.push(tipo);
 
-        //LIMPAR OS CAMPOS, NAO É OBRIGATORIO, MAS FICA BOM
         document.getElementById('emailR').value = '';
         document.getElementById('passwordR').value = '';
 
-        //VOLTAR PARA A TELA DE LOGIN
         switchLoginRegistro();
     }
 }
 function switchLoginRegistro() {
     var divs = document.getElementsByClassName("login-card");
 
-    for (var i = 0; i < divs.length; i++) { //Faz a funcao igual um forEach, mas aqui usa for, entao vai percorrer X vezes sendo X a quantidade de elementos com esse classe.
+    for (var i = 0; i < divs.length; i++) { 
         var div = divs[i];
-        var displayAtual = div.style.display;     //Pega como está o display desse element
-        if (displayAtual == 'none') {             //Se tiver none, vai mostrar
+        var displayAtual = div.style.display;
+        if (displayAtual == 'none') {
             div.style.display = ("block");
-        } else {                                  //Se nao, vai esconder
+        } else {
             div.style.display = ("none");
         }
     };
 }
 
-//FUNCAO QUE TROCA DE ABA AO CLICAR NA BARRA LATERAL
 function changeAba(click) {
     abas = ['banco', 'historico', 'solicitar', 'relatorio', 'solicitacoes'];
-    //PARA CADA ABA ELE VAI ESCONDER OU MOSTRAR ELAS.
+
     abas.forEach(aba => {
         var div = document.querySelector("." + aba + "-container");
 
@@ -80,9 +74,9 @@ function changeAba(click) {
         }
 
         if (click == aba) {
-            div.style.display = ("block"); //QUANDO FOR A ABA CLICADA, EM VEZ DE ESCONDER ELE VAI MOSTRAR
+            div.style.display = ("block");
         } else {
-            div.style.display = ("none"); //QUANDO FOR QUALQUER OUTRA ABA, ELE VAI ESCONDER
+            div.style.display = ("none");
         }
     });
 }
@@ -99,9 +93,7 @@ function fecharModal(modal) {
 
 
 function SelectFiltroDMA(Selected) {
-    //VAI PEGAR TODOS OS DO FILTRO E PARA CADA UM REMOVER A CLASSE 'ACTIVE'
     document.querySelectorAll("#filtroDMA .active").forEach(el => el.classList.remove("active"));
-    //VAI ADCIONAR ACTIVE NO SELECIONADO
     document.querySelector("#filtroDMA ." + Selected).classList.add('active');
 }
 

@@ -78,7 +78,7 @@
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function (e) {
-            e.preventDefault(); //Isso é só para ele ignorar oq um botão faz por padrão e só fazer oq ta aqui embaixo
+            e.preventDefault();
 
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
@@ -88,7 +88,7 @@
                 CriarNotificacao('Erro', 'Email não encontrado');
             }
             if (password == senhas[posicao]) {
-                //Muda para a pagina do tipo dele.
+
                 CriarNotificacao('Sucesso', 'Login realizado com sucesso!');
                 switch (cargos[posicao]) {
                     case 'tec':
