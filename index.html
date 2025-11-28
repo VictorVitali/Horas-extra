@@ -84,26 +84,27 @@
             const password = document.getElementById('password').value;
             if (emails.includes(email)) {
                 posicao = emails.indexOf(email);
-                if (password == senhas[posicao]) {
-                    CriarNotificacao('Sucesso', 'Login realizado com sucesso!');
-                    switch (cargos[posicao]) {
-                        case 'tec':
-                            window.location.href = "./Pages/tecnico.html";
-                            break;
-                        case 'ger':
-                            window.location.href = "./Pages/gerente.html";
-                            break;
-                        case 'enc':
-                            window.location.href = "./Pages/encarregado.html";
-                            break;
-                        default:
-                            window.location.href = "./Pages/sistema.html";
-                    }
-                } else {
-                    CriarNotificacao('Erro', 'Senha invalida!');
-                }
             } else {
                 CriarNotificacao('Erro', 'Email não encontrado');
+            }
+            if (password == senhas[posicao]) {
+
+                CriarNotificacao('Sucesso', 'Login realizado com sucesso!');
+                switch (cargos[posicao]) {
+                    case 'tec':
+                        window.location.href = "./Pages/tecnico.html";
+                        break;
+                    case 'ger':
+                        window.location.href = "./Pages/gerente.html";
+                        break;
+                    case 'enc':
+                        window.location.href = "./Pages/encarregado.html";
+                        break;
+                    default:
+                        window.location.href = "./Pages/sistema.html";
+                }
+            } else {
+                CriarNotificacao('Erro', 'Senha invalida!');
             }
         });
     </script>

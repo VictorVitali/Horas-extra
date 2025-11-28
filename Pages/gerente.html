@@ -12,6 +12,10 @@
     <!-- MENU LATERAL -->
     <div class="sidebar">
         <img src="../styles/imgs/Logo.svg" class="logo" alt="Logo do site">
+        <div class="menu-item" onclick="changeAba('solicitacoes')">
+            <img class="iconMenu" src="../styles/imgs/Add.svg" alt="Sinal de adicao">
+            <span>Solicitações</span>
+        </div>
         <div class="menu-item" onclick="changeAba('historico')">
             <img class="iconMenu" src="../styles/imgs/Folder.svg" alt="Pasta">
             <span>Histórico</span>
@@ -19,10 +23,6 @@
         <div class="menu-item" onclick="changeAba('relatorio')">
             <img class="iconMenu" src="../styles/imgs/Documents.svg" alt="Folhas">
             <span>Relatório</span>
-        </div>
-        <div class="menu-item">
-            <img class="iconMenu" src="../styles/imgs/Important File.svg" alt="Folha importante">
-            <span>Pedidos</span>
         </div>
         <!--MENU DE PERFIL-->
         <div class="menu-footer">
@@ -35,11 +35,14 @@
                 <span>Ajustes</span>
             </div>
             <div class="Usuario">
-                <img class="iconMenu" src="../styles/imgs/Avatar.png" alt="Imagem de perfil">
+                <img class="iconMenu avatar" src="../styles/imgs/Avatar.png" alt="Imagem de perfil">
                 <div class="dadosUser">
                     Vitali
                     <br>
                     <span class="user-email">tamoTestando@tamoTestando.com</span>
+                </div>
+                <div class="logout" onclick="logout()">
+                    <img src="../styles/imgs/logOut.svg">
                 </div>
             </div>
         </div>
@@ -76,119 +79,8 @@
     </div>
     <!-- FIM DA BARRA LATERAL -->
 
-    <!-- ABA DE BANCO DE HORAS -->
-    <div class="banco-container main-container">
-        <div class="page-title">
-            <h2>Consulta de Horas</h2>
-            <div class="Notificacao" onclick="openModal('Notificacao')">
-                <img src="../styles/imgs/Notification.svg" alt="Notificacao">
-            </div>
-        </div>
-
-
-        <div class="card-container">
-            <div class="period-selector">
-                <label for="SelectMeses">Selecione o período:</label>
-                <br>
-                <select id="SelectMeses">
-                    <option value="1">Janeiro/2025</option>
-                    <option value="2">Fevereiro/2025</option>
-                    <option value="3">Março/2025</option>
-                    <option value="4">Abril/2025</option>
-                    <option value="5">Maio/2025</option>
-                    <option value="6">Junho/2025</option>
-                    <option value="7">Julho/2025</option>
-                    <option value="8">Agosto/2025</option>
-                    <option value="9">Setembro/2025</option>
-                    <option value="10">Outubro/2025</option>
-                    <option value="11">Novembro/2025</option>
-                    <option value="12">Dezembro/2025</option>
-                </select>
-            </div>
-            <div class="card">
-                <h3>Banco de Horas</h3>
-                <p>Horas acumuladas</p>
-                <div class="valueCard">4h23m</div>
-            </div>
-            <div class="card">
-                <h3>Horas Extras</h3>
-                <p>Mês atual</p>
-                <div class="valueCard">0h54m</div>
-            </div>
-        </div>
-
-        <div id="Calendario">
-            <div class="calendar-box">
-                <div class="calendar-header">
-                    <div><button onclick="CriarNotificacao()">&larr;</button> August 2020 <button
-                            onclick="CriarNotificacao()">&rarr;</button></div>
-                    <div id="filtroDMA">
-                        <button onclick="SelectFiltroDMA('Month'), CriarNotificacao()"
-                            class="Month active">Month</button>
-                        <button onclick="SelectFiltroDMA('Week'), CriarNotificacao()" class="Week">Week</button>
-                        <button onclick="SelectFiltroDMA('Day'), CriarNotificacao()" class="Day">Day</button>
-                        <button onclick="SelectFiltroDMA('List'), CriarNotificacao()" class="List">List</button>
-                    </div>
-                </div>
-
-                <!-- Calendario -->
-                <div class="calendar-grid">
-                    <div class="naoMesAtual day">26</div>
-                    <div class="naoMesAtual day">27</div>
-                    <div class="naoMesAtual day">28</div>
-                    <div class="naoMesAtual day">29</div>
-                    <div class="naoMesAtual day">30</div>
-                    <div class="naoMesAtual day">31</div>
-                    <div class="day">1</div>
-
-                    <div class="day">2</div>
-                    <div class="day">3</div>
-                    <div class="day">4</div>
-                    <div class="day">5</div>
-                    <div class="day">6</div>
-                    <div class="day">7</div>
-                    <div class="day">8</div>
-
-                    <div class="day">9</div>
-                    <div class="day">10</div>
-                    <div class="day">11</div>
-                    <div class="day">12</div>
-                    <div class="day">13</div>
-                    <div class="day">14</div>
-                    <div class="day">15</div>
-
-                    <div class="day">16</div>
-                    <div class="day">17</div>
-                    <div class="day">18</div>
-                    <div class="day">19</div>
-                    <div class="day">20</div>
-                    <div class="day">21</div>
-                    <div class="day">22</div>
-
-                    <div class="day">23</div>
-                    <div class="day">24</div>
-                    <div class="day">25</div>
-                    <div class="day">26</div>
-                    <div class="day">27</div>
-                    <div class="day">28</div>
-                    <div class="day">29</div>
-
-                    <div class="day">30</div>
-                    <div class="day">31</div>
-                    <div class="naoMesAtual day">1</div>
-                    <div class="naoMesAtual day">2</div>
-                    <div class="naoMesAtual day">3</div>
-                    <div class="naoMesAtual day">4</div>
-                    <div class="naoMesAtual day">5</div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- FIM ABA DE BANCO DE HORAS -->
-
-    <!-- ABA DE HISTORICO -->
-    <div class="historico-container main-container" style="display: none;">
+    <!-- ABA DE SOLICITACOES -->
+    <div class="solicitacoes-container main-container" style="display: block;">
         <div class="page-title">
 
             <div class="Notificacao" onclick="openModal('Notificacao')">
@@ -196,7 +88,6 @@
             </div>
         </div>
         <div class="historico-header page-title">
-            <h2>Histórico</h2>
         </div>
 
         <div class="historico-table-container">
@@ -220,7 +111,9 @@
                         <td>10/10/2025</td>
                         <td>30hrs</td>
                         <td><span class="status-pendente">Pendente</span></td>
-                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
+                        <td><button class="detalhes-btn"
+                                onclick="openModal('Details-historico'); carregarObras('1')"><img
+                                    src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
                         <td>2025820</td>
@@ -229,7 +122,9 @@
                         <td>10/10/2025</td>
                         <td>15hrs</td>
                         <td><span class="status-pendente">Pendente</span></td>
-                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
+                        <td><button class="detalhes-btn"
+                                onclick="openModal('Details-historico'); carregarObras('2')"><img
+                                    src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
                         <td>2025819</td>
@@ -238,7 +133,8 @@
                         <td>10/10/2025</td>
                         <td>15hrs</td>
                         <td><span class="status-pendente">Pendente</span></td>
-                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
+                        <td><button class="detalhes-btn" onclick="openModal('Details-historico')"><img
+                                    src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
                         <td>2025818</td>
@@ -247,7 +143,8 @@
                         <td>10/10/2025</td>
                         <td>10hrs</td>
                         <td><span class="status-pendente">Pendente</span></td>
-                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
+                        <td><button class="detalhes-btn" onclick="openModal('Details-historico')"><img
+                                    src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
                         <td>2025817</td>
@@ -256,7 +153,8 @@
                         <td>10/10/2025</td>
                         <td>12hrs</td>
                         <td><span class="status-pendente">Pendente</span></td>
-                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
+                        <td><button class="detalhes-btn" onclick="openModal('Details-historico')"><img
+                                    src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                     <tr>
                         <td>2025816</td>
@@ -265,7 +163,167 @@
                         <td>10/10/2025</td>
                         <td>10hrs</td>
                         <td><span class="status-pendente">Pendente</span></td>
-                        <td><button class="detalhes-btn"><img src="../styles/imgs/Menu Historico.svg"></button></td>
+                        <td><button class="detalhes-btn" onclick="openModal('Details-historico')"><img
+                                    src="../styles/imgs/Menu Historico.svg"></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modal-details-historico modal-notificacao" id="divDetails-historico">
+        <div class="modal-content">
+            <div class="modal-container modal-container-hist">
+                <div class="hist-modal-body">
+                    <div class="hist-esq-modal">
+                        <div class="hist-info-grid">
+                            <div class="row">
+                                <div class="item">
+                                    <span class="label">Código:</span> 2025811
+                                </div>
+                                <div class="item">
+                                    <span class="label">Encarregado:</span> Richard
+                                </div>
+                                <div class="item">
+                                    <span class="label">Obra:</span> Malvile
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="item">
+                                    <span class="label">Data da Requisição:</span> 10/10/2025
+                                </div>
+                                <div class="item">
+                                    <span class="label">Quantidade de Horas:</span> 30hrs
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hist-grid-content">
+                            <input type="hidden" id="obraIdHidden">
+                            <div class="desc-box">
+                                <span class="label">Descrição:</span>
+                                <textarea id="descTextarea"></textarea>
+                            </div>
+
+                            <div class="tec-box">
+                                <span class="label">Técnicos:</span>
+                                <textarea id="tecTextarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hist-dir-modal">
+                        <div class="date-box">
+                            <p><span class="label">Início:</span> 15/10/2025</p>
+                            <p><span class="label">Fim:</span> 25/10/2025</p>
+                        </div>
+                        <div class="status-row">
+                            <span class="status-label">Status:</span>
+                            <span class="status-value">Em análise</span>
+                        </div>
+                        <div class="req-actions">
+                            <div class="button-container">
+                                <button class="btn approve" onclick="fecharModal('details-historico'); CriarNotificacao('Sucesso', 'Sua resposta foi enviada com sucesso');">
+                                    <span>APROVAR</span>
+                                </button>
+                                <div class="divider"></div>
+                                <button class="btn reject" onclick="fecharModal('details-historico'); CriarNotificacao('Sucesso', 'Sua resposta foi enviada com sucesso');">
+                                    <span>Recusar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FIM ABA DE SOLICITACOES -->
+
+
+    <!-- ABA DE HISTORICO -->
+    <div class="historico-container main-container" style="display: none;">
+        <div class="page-title">
+
+            <div class="Notificacao" onclick="openModal('Notificacao')">
+                <img src="../styles/imgs/Notification.svg" alt="Notificacao">
+            </div>
+        </div>
+        <div class="historico-header page-title">
+        </div>
+
+        <div class="historico-table-container">
+            <table class="historico-table">
+                <thead>
+                    <tr>
+                        <th>Código Solicitação</th>
+                        <th>Encarregado</th>
+                        <th>Obra</th>
+                        <th>Data Requisição</th>
+                        <th>Quant. Horas</th>
+                        <th>Status</th>
+                        <th>Detalhes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025821</td>
+                        <td>Arthur G. Siqueira</td>
+                        <td>Malville</td>
+                        <td>10/10/2025</td>
+                        <td>30hrs</td>
+                        <td><span class="status-pendente">Pendente</span></td>
+                        <td><button class="detalhes-btn"
+                                onclick="openModal('Details-historico'); carregarObras('1')"><img
+                                    src="../styles/imgs/Menu Historico.svg"></button></td>
+                    </tr>
+                    <tr>
+                        <td>2025820</td>
+                        <td>Richard V. Costa</td>
+                        <td>Leito Verde</td>
+                        <td>10/10/2025</td>
+                        <td>15hrs</td>
+                        <td><span class="status-pendente">Pendente</span></td>
+                        <td><button class="detalhes-btn"
+                                onclick="openModal('Details-historico'); carregarObras('2')"><img
+                                    src="../styles/imgs/Menu Historico.svg"></button></td>
+                    </tr>
+                    <tr>
+                        <td>2025819</td>
+                        <td>Fernada T. Vanile</td>
+                        <td>Malville</td>
+                        <td>10/10/2025</td>
+                        <td>15hrs</td>
+                        <td><span class="status-pendente">Pendente</span></td>
+                        <td><button class="detalhes-btn" onclick="openModal('Details-historico')"><img
+                                    src="../styles/imgs/Menu Historico.svg"></button></td>
+                    </tr>
+                    <tr>
+                        <td>2025818</td>
+                        <td>Richard V. Costa</td>
+                        <td>Malville</td>
+                        <td>10/10/2025</td>
+                        <td>10hrs</td>
+                        <td><span class="status-pendente">Pendente</span></td>
+                        <td><button class="detalhes-btn" onclick="openModal('Details-historico')"><img
+                                    src="../styles/imgs/Menu Historico.svg"></button></td>
+                    </tr>
+                    <tr>
+                        <td>2025817</td>
+                        <td>Jorge A. de Jesus</td>
+                        <td>Jaques</td>
+                        <td>10/10/2025</td>
+                        <td>12hrs</td>
+                        <td><span class="status-pendente">Pendente</span></td>
+                        <td><button class="detalhes-btn" onclick="openModal('Details-historico')"><img
+                                    src="../styles/imgs/Menu Historico.svg"></button></td>
+                    </tr>
+                    <tr>
+                        <td>2025816</td>
+                        <td>Eduarda B. Silva</td>
+                        <td>Malville</td>
+                        <td>10/10/2025</td>
+                        <td>10hrs</td>
+                        <td><span class="status-pendente">Pendente</span></td>
+                        <td><button class="detalhes-btn" onclick="openModal('Details-historico')"><img
+                                    src="../styles/imgs/Menu Historico.svg"></button></td>
                     </tr>
                 </tbody>
             </table>
@@ -273,8 +331,9 @@
     </div>
     <!-- FIM ABA DE HISTORICO -->
 
-    <!--ABA SOLICITAR-->
-    <div class="solicitar-container main-container" style="display: none;">
+
+    <!--ABA DE RELATORIO -->
+    <div class="relatorio-container main-container" style="display: none;">
         <div class="page-title">
 
             <div class="Notificacao" onclick="openModal('Notificacao')">
@@ -282,79 +341,137 @@
             </div>
         </div>
         <div class="page-title">
-            <h2>Solicitar</h2>
         </div>
 
-        <div class="form-container">
-            <table class="form-table">
-                <thead>
-                    <tr>
-                        <th>Obra</th>
-                        <th>Quantidade de Horas</th>
-                        <th>Data Início</th>
-                        <th>Data Término</th>
-                        <th>Técnicos Solicitantes</th>
-                        <th>Justificativa</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <select id="obra" required>
-                                <option value="">Selecione a obra</option>
-                                <option value="obra1">Obra A - Residencial Alphaville</option>
-                                <option value="obra2">Obra B - Comercial Centro</option>
-                                <option value="obra3">Obra C - Industrial Zona Leste</option>
-                                <option value="outra">Outra</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input type="number" id="quantidade-horas" placeholder="Digite aqui" min="1" max="12"
-                                required>
-                        </td>
-                        <td>
-                            <input type="date" id="data-inicio" required>
-                        </td>
-                        <td>
-                            <input type="date" id="data-termino" required>
-                        </td>
-                        <td>
-                            <select id="tecnicos" multiple required>
-                                <option value="tec1">João Silva - Engenheiro Civil</option>
-                                <option value="tec2">Maria Santos - Técnica em Edificações</option>
-                                <option value="tec3">Pedro Oliveira - Engenheiro Eletricista</option>
-                                <option value="tec4">Ana Costa - Técnica em Segurança</option>
-                                <option value="tec5">Carlos Lima - Engenheiro Mecânico</option>
-                                <option value="tec6">Fernanda Rocha - Arquiteta</option>
-                            </select>
-                            <small>Limite de 5 técnicos</small>
-                        </td>
-                        <td>
-                            <textarea id="justificativa" placeholder="Digite aqui" required></textarea>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="filters">
 
-            <div class="form-footer">
 
-                <div class="submit-section">
-                    <button type="submit" class="submit-btn"
-                        onclick="CriarNotificacao('Sucesso', 'Sua solicitação foi enviada com sucesso')">Enviar
-                        Requisição</button>
+            <div class="column">
+                <div class="input-group">
+                    <label>Período</label>
                 </div>
-                <span>
-                    *Todos os campos são obrigatórios
-                </span>
+                <div class="input-group">
+                    <label>De:</label>
+                    <input type="date" placeholder="  /  /  ">
+                </div>
+
+                <div class="input-group">
+                    <label>Até:</label>
+                    <input type="date" placeholder="  /  /  ">
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="input-group">
+                    <select>
+                        <option>Encarregado</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <select>
+                        <option>Quantidade de Horas</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="column">
+                <div class="input-group">
+                    <select>
+                        <option>Obra</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <select>
+                        <option>Status</option>
+                    </select>
+                </div>
             </div>
         </div>
 
+        <div class="cards-table-wrapper">
+
+            <div class="cards-relatorio">
+
+                <div class="card-relatorio">
+                    <span>Total Horas Extras:</span>
+                    <p>*** horas</p>
+                </div>
+
+                <div class="card-relatorio">
+                    <span>Valor Total Alocado:</span>
+                    <p>R$***,**</p>
+                </div>
+
+                <div class="card-relatorio">
+                    <span>Horas Extras no Período:</span>
+                    <p>*** horas</p>
+                </div>
+
+                <div class="card-relatorio">
+                    <span>Valor Alocado no Período:</span>
+                    <p>R$***,**</p>
+                </div>
+            </div>
+
+            <div class="table-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Técnico</th>
+                            <th>Função</th>
+                            <th>Obra</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**/**/****</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>**/**/****</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>**/**/****</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>**/**/****</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>**/**/****</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="submit-section" style="margin-top: 1rem;">
+            <button class="btn-relatorio submit-btn">Gerar Relatório PDF</button>
+        </div>
     </div>
-    <!--FIM ABA SOLICITAR-->
+    <!-- FIM ABA RELATORIO -->
+
 
     <!-- MODAL DE NOTIFICACAO -->
     <div class="modal-notificacao" id="divNotificacao">
         <div class="page-title">
+
             <div class="Notificacao" onclick="openModal('Notificacao')">
                 <img src="../styles/imgs/Notification.svg" alt="Notificacao">
             </div>
@@ -366,8 +483,6 @@
             </div>
 
             <div class="modal-content">
-
-
                 <div class="notification-item aprovado">
                     <div class="notification-icon">
                         <img src="../styles/imgs/check.svg" alt="Correto">
@@ -409,11 +524,14 @@
     </div>
     <!-- FIM MODAL DE NOTIFICACAO -->
 
+
     <!-- ALERTA -->
     <div id="Alert">
         <div id="ConteudoAlert"></div>
     </div>
     <!-- FIM ALERTA -->
+
+
 </body>
 
 </html>

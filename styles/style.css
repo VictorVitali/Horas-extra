@@ -1,4 +1,5 @@
 /* CONFIGS GLOBAIS */
+
 :root {
     --blue: #3981BF;
     --green: #39BF81;
@@ -25,13 +26,6 @@ h3 {
     size: 40px;
 }
 
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #ededed;
-    display: flex;
-}
-
 select,
 input,
 textarea {
@@ -51,10 +45,18 @@ textarea:focus {
 
 /* FIM CONFIGS GLOBAIS */
 
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #ededed;
+    display: flex;
+}
+
 .centralizar {
     display: flex;
     justify-content: center;
     align-items: center;
+
     height: 100vh;
     width: 100vw;
 }
@@ -74,6 +76,7 @@ textarea:focus {
 /* MENU LATERAL */
 .sidebar {
     position: fixed;
+
     width: 12rem;
     background: white;
     height: 100vh;
@@ -81,7 +84,8 @@ textarea:focus {
     display: flex;
     flex-direction: column;
 }
-.logo{
+
+.logo {
     padding: 20px;
 }
 
@@ -107,20 +111,26 @@ textarea:focus {
 .Usuario {
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 20px 10px;
+    padding-right: 5px;
     background: #ececec;
 }
 
-.Usuario img {
+.Usuario .avatar {
     width: 1.7rem;
     height: 1.7rem;
     border-radius: 50%;
 }
 
+.logout {
+    cursor: pointer;
+    padding: 5px;
+}
+
 .dadosUser {
     margin-left: 10px;
     font-size: 14px;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .user-email {
@@ -129,6 +139,7 @@ textarea:focus {
 }
 
 /* LADO DIREITO (PRINCIPAL) */
+
 .main-container {
     margin-left: 11rem;
     flex: 1;
@@ -367,6 +378,7 @@ select {
     font-family: sans-serif;
     cursor: pointer;
 
+    /* Sombra leve (acreditem, faz diferenca, mas nem percebemos)*/
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
@@ -376,7 +388,8 @@ select:focus {
     box-shadow: 0 0 0 3px rgba(109, 157, 252, 0.8);
 }
 
-/* HISTORICO */
+/* CSS DO HISTORICO */
+
 .historico-table-container {
     background: white;
     border-radius: 8px;
@@ -430,7 +443,7 @@ select:focus {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
-    display: flex;
+    /* DEIXA O RESTO DO SITE UM POUCO MAIS ESCURO */
     justify-content: center;
     align-items: center;
 }
@@ -440,7 +453,7 @@ select:focus {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     width: 90%;
-    max-width: 500px;
+    max-width: 70vh;
     max-height: 80vh;
     overflow: hidden;
     animation: modalAppear 0.3s ease-out;
@@ -473,7 +486,7 @@ select:focus {
     max-height: calc(80vh - 140px);
     overflow-y: auto;
     position: relative;
-
+    min-width: 600px
 }
 
 .notification-item {
@@ -562,6 +575,7 @@ select:focus {
     font-size: 20px;
     cursor: pointer;
 }
+
 .modal-help-content {
     background-color: white;
     width: 80%;
@@ -583,9 +597,11 @@ select:focus {
     transition: background-color 0.2s ease;
     cursor: pointer;
 }
-.help-section:hover{
+
+.help-section:hover {
     background-color: #ececec;
 }
+
 .help-section h3 {
     color: #003366;
     margin-bottom: 10px;
@@ -600,13 +616,6 @@ select:focus {
 
 
 
-
-
-
-/* Estilos Gerais */
-.solicitar-container {
-    max-width: 70vw;
-}
 
 
 /* Container do Formulário */
@@ -648,16 +657,19 @@ select:focus {
     font-size: 11px;
 }
 
+/* Textarea */
 .form-table textarea {
     min-height: 7rem;
 }
 
+/* Rodapé do Formulário */
 .form-footer {
     padding: 20px;
     background: #f8f9fa;
     border-top: 1px solid #dee2e6;
 }
 
+/* Botão de Enviar */
 .submit-section {
     text-align: center;
     margin-bottom: 15px;
@@ -687,6 +699,7 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
+/* Estilo dos Placeholders */
 ::placeholder {
     color: #6c757d;
     opacity: 0.7;
@@ -695,17 +708,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .right {
     float: right;
-}
-
-
-
-
-
-
-
-
-.relatorio-container {
-    max-width: 1200px;
 }
 
 .filters {
@@ -724,6 +726,11 @@ input[type="number"]::-webkit-inner-spin-button {
     align-items: center;
     gap: 10px;
 }
+
+.input-group input {
+    min-width: 200px;
+}
+
 .calendar-btn {
     padding: 10px 12px;
     font-size: 18px;
@@ -783,4 +790,153 @@ input[type="number"]::-webkit-inner-spin-button {
     padding: 10px;
     text-align: center;
     border-bottom: 1px solid #eaeaea;
+}
+
+
+.modal-container-hist {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    min-width: 70rem;
+}
+
+.hist-modal-body {
+    display: flex;
+    border-radius: 12px;
+    border: 1px solid black;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.hist-info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px 36px;
+    font-size: 15px;
+    margin-bottom: 28px;
+}
+
+.hist-info-grid .label {
+    font-weight: 600;
+}
+
+.hist-grid-content {
+    display: flex;
+}
+
+.hist-dir-modal {
+    border-left: 2px solid black;
+    width: 30%;
+    padding: 2rem 1.5rem;
+}
+
+.hist-esq-modal {
+    width: 70%;
+    padding: 2rem 1.5rem;
+}
+
+.desc-box textarea,
+.tec-box textarea {
+    width: 100%;
+    height: 110px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    resize: none;
+    padding: 8px;
+    background: #fdfdfd;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+
+.desc-box {
+    width: 60%;
+}
+
+.tec-box {
+    width: 40%;
+}
+
+.status-row {
+    padding: 32px 0;
+    font-size: 18px;
+}
+
+.status-label {
+    font-weight: 600;
+}
+
+.status-value {
+    color: #c7a100;
+    font-weight: 700;
+    margin-left: 4px;
+}
+
+.req-actions {
+    display: flex;
+    gap: 28px;
+    justify-content: flex-start;
+    margin-top: 24px;
+}
+
+.req-actions button {
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    color: #0067ff;
+}
+
+.cancel-btn {
+    color: #d10e0e;
+}
+
+.btn {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.approve {
+    background-color: #2ecc71;
+    color: white;
+    box-shadow: 0 4px 6px rgba(46, 204, 113, 0.3);
+}
+
+.approve:hover {
+    background-color: #27ae60;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 8px rgba(46, 204, 113, 0.4);
+}
+
+.reject {
+    background-color: #e74c3c;
+    color: white;
+    box-shadow: 0 4px 6px rgba(231, 76, 60, 0.3);
+}
+
+.reject:hover {
+    background-color: #c0392b;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 8px rgba(231, 76, 60, 0.4);
+}
+
+.button-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
 }
